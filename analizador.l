@@ -3,6 +3,7 @@
 #include <string.h>
 
 FILE *outfile;
+char stringBuffer[1024];
 
 void escribirArchivo(const char* token,const char* lexema) {
     fprintf(outfile, "%s: %s\n", token, lexema);
@@ -10,6 +11,7 @@ void escribirArchivo(const char* token,const char* lexema) {
 %}
 
 %x COMENTARIO_M
+%x STRING
 
 PR_INT               "int"
 PR_SHORT             "short"
@@ -89,7 +91,10 @@ OP_MIEMBRO_PTR             "->"
 SE_PUNTO                   "."
 SE_PUNTO_COMA              ";"
 SE_GUION_BAJO              "_"
+SE_COMA                    ","
 
+COMILLA_SIMPLE             \'
+COMILLA_DOBLE              \"
 LLAVE_AP                   "{"
 LLAVE_CE                   "}"
 CORCHETE_AP                "["
@@ -114,6 +119,9 @@ PR_DEFINE                  {SE_HASH}"define"
 DIGITO [0-9]
 LETRA [a-zA-Z]
 
+INT [+-]?{DIGITO}+
+FLOAT [+-]?{DIGITO}+"."{DIGITO}*
+CHAR {COMILLA_SIMPLE}.{COMILLA_SIMPLE}
 
 HEADER {OP_MENOR}[^{OP_MAYOR} \t\n]+{OP_MAYOR}
 
@@ -198,6 +206,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 
 {SE_PUNTO}                   { escribirArchivo("SE_PUNTO", yytext); }
 {SE_PUNTO_COMA}              { escribirArchivo("SE_PUNTO_COMA", yytext); }
+{SE_COMA}                { escribirArchivo("SE_COMA", yytext); }
 
 {LLAVE_AP}                   { escribirArchivo("LLAVE_AP", yytext); }
 {LLAVE_CE}                   { escribirArchivo("LLAVE_CE", yytext); }
@@ -216,17 +225,33 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 
 {HEADER} { escribirArchivo("HEADER", yytext); }
 {IDENTIFICADOR} { escribirArchivo("IDENTIFICADOR", yytext); }
-{DIGITO}                     { escribirArchivo("DIGITO", yytext); }
+
+{INT} { escribirArchivo("LIT_INT", yytext); }
+{FLOAT} { escribirArchivo("LIT_FLOAT", yytext); }
+{CHAR} { escribirArchivo("LIT_CHAR", yytext); }
+
 
 {COMENTARIO_LINEA}  {}
 
 {COMENTARIO_AP} { BEGIN(COMENTARIO_M); }
-
 <COMENTARIO_M>{
   {COMENTARIO_CE}  { BEGIN(INITIAL); }
   .|\n     ; 
 }
 
+{COMILLA_DOBLE} {
+  strcat(stringBuffer, "\"");
+  BEGIN(STRING); 
+}
+<STRING>{
+  {COMILLA_DOBLE}  {
+    strcat(stringBuffer, "\"");
+    escribirArchivo("LIT_STRING", stringBuffer);
+    strcpy(stringBuffer, "");
+    BEGIN(INITIAL); 
+  }
+  .|\n     {strncat(stringBuffer, yytext, 1);}
+}
 
 .                             { escribirArchivo("Caracter no reconocido", yytext); }
 
