@@ -1,0 +1,63 @@
+Caracter no reconocido: #
+Letra: i
+Letra: n
+Letra: c
+Letra: l
+Letra: u
+Letra: d
+Letra: e
+Caracter no reconocido:  
+Caracter no reconocido: <
+Letra: i
+Letra: o
+Letra: s
+Letra: t
+Letra: r
+Letra: e
+Letra: a
+Letra: m
+Caracter no reconocido: >
+Letra: u
+Letra: s
+Letra: i
+Letra: n
+Letra: g
+Caracter no reconocido:  
+Letra: n
+Letra: a
+Letra: m
+Letra: e
+Letra: s
+Letra: p
+Letra: a
+Letra: c
+Letra: e
+Caracter no reconocido:  
+Letra: s
+Letra: t
+Letra: d
+Caracter no reconocido: ;
+Letra: i
+Letra: n
+Letra: t
+Caracter no reconocido:  
+Letra: m
+Letra: a
+Letra: i
+Letra: n
+Caracter no reconocido: (
+Caracter no reconocido: )
+Caracter no reconocido:  
+Caracter no reconocido: {
+Caracter no reconocido:  
+Letra: r
+Letra: e
+Letra: t
+Letra: u
+Letra: r
+Letra: n
+Caracter no reconocido:  
+Digito: 0
+Caracter no reconocido: ;
+Caracter no reconocido:  
+Caracter no reconocido: }
