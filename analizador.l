@@ -5,14 +5,36 @@
 FILE *outfile;
 FILE *table;
 char stringBuffer[1024];
-int id = 0;
+int idCount = 0;
+
+typedef struct {
+  int id;
+  char lexema[100];
+  char token[20];
+} Id;
+
+Id idTable[100];
 
 void escribirArchivo(const char* token,const char* lexema) {
     fprintf(outfile, "%s: %s\n", token, lexema);
 }
 
+int existeId(const char* lexema) {
+    for (int i = 0; i < idCount; i++) {
+        if (strcmp(idTable[i].lexema, lexema) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void escribirTabla(const char* token,const char* lexema, int id) {
-    fprintf(table, "%d. %s: %s\n", id,token, lexema);
+  if (!existeId(lexema)) {
+    strcpy(idTable[idCount].lexema, lexema);
+    idTable[idCount].id = id;
+    strcpy(idTable[idCount].token, token);
+    idCount++;
+  }
 }
 %}
 
@@ -232,7 +254,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {HEADER} { escribirArchivo("HEADER", yytext); }
 {IDENTIFICADOR} { 
   escribirArchivo("IDENTIFICADOR", yytext);
-  escribirTabla("IDENTIFICADOR", yytext, id++);
+  escribirTabla("IDENTIFICADOR", yytext, idCount);
 }
 
 {INT} { escribirArchivo("LIT_INT", yytext); }
@@ -282,6 +304,11 @@ int main(int argc, char **argv) {
 
 	if ( argc > 0 ) yyin = fopen( argv[0], "r" ); 
 	else yyin = stdin; yylex();
+
+  for (int i = 0; i < idCount; i++) {
+    fprintf(table, "%d: %s\n", idTable[i].id, idTable[i].lexema);
+  }
+
   fclose(outfile);
   fclose(table);
   return 0;
