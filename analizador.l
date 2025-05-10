@@ -3,10 +3,16 @@
 #include <string.h>
 
 FILE *outfile;
+FILE *table;
 char stringBuffer[1024];
+int id = 0;
 
 void escribirArchivo(const char* token,const char* lexema) {
     fprintf(outfile, "%s: %s\n", token, lexema);
+}
+
+void escribirTabla(const char* token,const char* lexema, int id) {
+    fprintf(table, "%d. %s: %s\n", id,token, lexema);
 }
 %}
 
@@ -224,7 +230,10 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {PR_DEFINE}          { escribirArchivo("PR_DEFINE", yytext); }
 
 {HEADER} { escribirArchivo("HEADER", yytext); }
-{IDENTIFICADOR} { escribirArchivo("IDENTIFICADOR", yytext); }
+{IDENTIFICADOR} { 
+  escribirArchivo("IDENTIFICADOR", yytext);
+  escribirTabla("IDENTIFICADOR", yytext, id++);
+}
 
 {INT} { escribirArchivo("LIT_INT", yytext); }
 {FLOAT} { escribirArchivo("LIT_FLOAT", yytext); }
@@ -261,13 +270,20 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 int main(int argc, char **argv) {
   ++argv,--argc; /* se salta el nombre del programa*/
   outfile = fopen("archivo.txt", "w");
+  table = fopen("table.txt", "w");
   if (!outfile) {
-        printf("No se pudo abrir el archivo de salida");
-        return 1;
+    printf("No se pudo abrir el archivo de salida");
+    return 1;
   }
+  if (!table) {
+    printf("No se pudo abrir el archivo de tabla");
+    return 1;
+  }
+
 	if ( argc > 0 ) yyin = fopen( argv[0], "r" ); 
 	else yyin = stdin; yylex();
   fclose(outfile);
+  fclose(table);
   return 0;
 }
 
