@@ -657,9 +657,10 @@ typedef struct {
 
 Id idTable[100];
 
-void escribirArchivo(const char* token,const char* lexema) {
-    fprintf(outfile, "%s: %s\n", token, lexema);
+void escribirArchivo(const char* token, const char* lexema) {
+    fprintf(outfile, "%-30s %s\n", token, lexema);
 }
+
 
 int existeId(const char* lexema) {
     for (int i = 0; i < idCount; i++) {
@@ -678,9 +679,9 @@ void escribirTabla(const char* token,const char* lexema, int id) {
     idCount++;
   }
 }
-#line 681 "lex.yy.c"
+#line 682 "lex.yy.c"
 
-#line 683 "lex.yy.c"
+#line 684 "lex.yy.c"
 
 #define INITIAL 0
 #define COMENTARIO_M 1
@@ -901,7 +902,7 @@ YY_DECL
 	{
 #line 159 "analizador.l"
 
-#line 904 "lex.yy.c"
+#line 905 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1486,7 +1487,7 @@ YY_RULE_SETUP
 #line 290 "analizador.l"
 ECHO;
 	YY_BREAK
-#line 1489 "lex.yy.c"
+#line 1490 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMENTARIO_M):
 case YY_STATE_EOF(STRING):
@@ -2509,6 +2510,8 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  fprintf(outfile, "%-30s %s\n", "TOKEN", "LEXEMA");
+  fprintf(outfile, "--------------------------------------\n");
 	if ( argc > 0 ) yyin = fopen( argv[0], "r" ); 
 	else yyin = stdin; yylex();
 

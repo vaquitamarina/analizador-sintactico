@@ -15,9 +15,10 @@ typedef struct {
 
 Id idTable[100];
 
-void escribirArchivo(const char* token,const char* lexema) {
-    fprintf(outfile, "%s: %s\n", token, lexema);
+void escribirArchivo(const char* token, const char* lexema) {
+    fprintf(outfile, "%-30s %s\n", token, lexema);
 }
+
 
 int existeId(const char* lexema) {
     for (int i = 0; i < idCount; i++) {
@@ -154,7 +155,6 @@ CHAR {COMILLA_SIMPLE}.{COMILLA_SIMPLE}
 HEADER {OP_MENOR}[^{OP_MAYOR} \t\n]+{OP_MAYOR}
 
 IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
-
 
 %%
 {PR_INT}                { escribirArchivo("PR_INT", yytext); }
@@ -302,6 +302,8 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  fprintf(outfile, "%-30s %s\n", "TOKEN", "LEXEMA");
+  fprintf(outfile, "--------------------------------------\n");
 	if ( argc > 0 ) yyin = fopen( argv[0], "r" ); 
 	else yyin = stdin; yylex();
 
