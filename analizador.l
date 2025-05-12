@@ -17,46 +17,6 @@ typedef struct {
 
 Id idTable[100];
 
-void escribirArchivo(const char* token, const char* lexema) {
-    fprintf(outfile, "%-30s %s\n", token, lexema);
-}
-
-
-int existeId(const char* lexema) {
-    for (int i = 0; i < idCount; i++) {
-        if (strcmp(idTable[i].lexema, lexema) == 0) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
-
-int verificarRango(const char* lexema) {
-    char* endptr;
-    errno = 0;
-    long int valor = strtol(lexema, &endptr, 10);
-    if (errno == ERANGE) {
-        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
-        return 0;
-    }
-
-    if (valor < -2147483648L || valor > 2147483647L) {
-        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
-        return 0;
-    }
-
-    return 1;
-}
-
-void escribirTabla(const char* token,const char* lexema, int id) {
-  if (!existeId(lexema)) {
-    strcpy(idTable[idCount].lexema, lexema);
-    idTable[idCount].id = id;
-    strcpy(idTable[idCount].token, token);
-    idCount++;
-  }
-}
 %}
 
 %x COMENTARIO_M
@@ -359,4 +319,44 @@ int main(int argc, char **argv) {
 
 int yywrap(){
 return 1;
+}
+void escribirArchivo(const char* token, const char* lexema) {
+    fprintf(outfile, "%-30s %s\n", token, lexema);
+}
+
+
+int existeId(const char* lexema) {
+    for (int i = 0; i < idCount; i++) {
+        if (strcmp(idTable[i].lexema, lexema) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
+int verificarRango(const char* lexema) {
+    char* endptr;
+    errno = 0;
+    long int valor = strtol(lexema, &endptr, 10);
+    if (errno == ERANGE) {
+        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
+        return 0;
+    }
+
+    if (valor < -2147483648L || valor > 2147483647L) {
+        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
+        return 0;
+    }
+
+    return 1;
+}
+
+void escribirTabla(const char* token,const char* lexema, int id) {
+  if (!existeId(lexema)) {
+    strcpy(idTable[idCount].lexema, lexema);
+    idTable[idCount].id = id;
+    strcpy(idTable[idCount].token, token);
+    idCount++;
+  }
 }

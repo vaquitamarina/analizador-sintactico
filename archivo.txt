@@ -1,6 +1,4 @@
 TOKEN                          LEXEMA
 --------------------------------------
-LIT_FLOAT                      123e10
-LIT_FLOAT                      123E-10
-LIT_FLOAT                      .456e+5
-LIT_FLOAT                      -123.456E10
+IDENTIFICADOR                  dasdasd
+LIT_INT                        123123123
