@@ -32,7 +32,8 @@ int main() {
   points[1].label = 'B';
 
   float d = distance(&points[0], &points[1]);
-  printf("Distancia entre %c y %c: %f\n", points[0].label, points[1].label, d);
+  printf("Distancia entre \" %c \" y  \" %c \" : %f\n", points[0].label,
+         points[1].label, d);
 
   return 0;
 }

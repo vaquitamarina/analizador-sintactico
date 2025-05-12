@@ -159,7 +159,7 @@ PARENTESIS_CE                  )
 SE_PUNTO_COMA                  ;
 IDENTIFICADOR                  printf
 PARENTESIS_AP                  (
-LIT_STRING                     "Distancia entre %c y %c: %f\n"
+LIT_STRING                     "Distancia entre \" %c \" y  \" %c \" : %f\n"
 SE_COMA                        ,
 IDENTIFICADOR                  points
 CORCHETE_AP                    [

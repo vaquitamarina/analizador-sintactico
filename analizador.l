@@ -274,6 +274,8 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
   BEGIN(STRING); 
 }
 <STRING>{
+  \\\"    {strncat(stringBuffer, yytext,2);}
+
   {COMILLA_DOBLE} {
     strcat(stringBuffer, "\"");
     escribirArchivo("LIT_STRING", stringBuffer);
