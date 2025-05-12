@@ -1,4 +1,5 @@
 TOKEN                          LEXEMA
 --------------------------------------
-IDENTIFICADOR                  dasdasd
-LIT_INT                        123123123
+LIT_INT                        2
+OP_RESTA                       -
+LIT_INT                        2
