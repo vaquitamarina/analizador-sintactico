@@ -1,8 +1,0 @@
-0: MAX_COUNT
-1: Point
-2: x
-3: id
-4: main
-5: i
-6: p1
-7: printf

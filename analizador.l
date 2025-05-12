@@ -1,6 +1,8 @@
 %{
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <errno.h>
 
 FILE *outfile;
 FILE *table;
@@ -27,6 +29,33 @@ int existeId(const char* lexema) {
         }
     }
     return 0;
+}
+
+/*int verificarRango(const char* lexema){
+  char* endptr;
+  long int valor = strtol(lexema, &endptr, 10);
+  if (valor < -2147483648L || valor > 2147483647L) {
+    fprintf(outfile, "Error: El valor %s está fuera del rango de un entero\n", lexema);
+    return 0;
+  }
+  return 1;
+}*/
+
+int verificarRango(const char* lexema) {
+    char* endptr;
+    errno = 0;
+    long int valor = strtol(lexema, &endptr, 10);
+    if (errno == ERANGE) {
+        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
+        return 0;
+    }
+
+    if (valor < -2147483648L || valor > 2147483647L) {
+        fprintf(outfile, "%-30s %s\n", "INTEGER NO VALID", lexema);
+        return 0;
+    }
+
+    return 1;
 }
 
 void escribirTabla(const char* token,const char* lexema, int id) {
@@ -257,7 +286,11 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
   escribirTabla("IDENTIFICADOR", yytext, idCount);
 }
 
-{INT} { escribirArchivo("LIT_INT", yytext); }
+{INT} { 
+    if (verificarRango(yytext)) { 
+        escribirArchivo("LIT_INT", yytext); 
+    } 
+}
 {FLOAT} { escribirArchivo("LIT_FLOAT", yytext); }
 {CHAR} { escribirArchivo("LIT_CHAR", yytext); }
 
