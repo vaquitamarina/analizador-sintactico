@@ -31,15 +31,6 @@ int existeId(const char* lexema) {
     return 0;
 }
 
-/*int verificarRango(const char* lexema){
-  char* endptr;
-  long int valor = strtol(lexema, &endptr, 10);
-  if (valor < -2147483648L || valor > 2147483647L) {
-    fprintf(outfile, "Error: El valor %s está fuera del rango de un entero\n", lexema);
-    return 0;
-  }
-  return 1;
-}*/
 
 int verificarRango(const char* lexema) {
     char* endptr;
