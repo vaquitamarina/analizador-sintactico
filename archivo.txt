@@ -1,3 +1,3 @@
 TOKEN                          LEXEMA
 --------------------------------------
-INTEGER NO VALID               9999999999999
+LIT_FLOAT                      .3123
