@@ -17,6 +17,11 @@ typedef struct {
 
 Id idTable[100];
 
+void escribirArchivo(const char* token, const char* lexema);
+int existeId(const char* lexema);
+int verificarRango(const char* lexema);
+void escribirTabla(const char* token,const char* lexema, int id);
+
 %}
 
 %x COMENTARIO_M
