@@ -296,7 +296,11 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {COMENTARIO_AP} { BEGIN(COMENTARIO_M); }
 <COMENTARIO_M>{
   {COMENTARIO_CE} { BEGIN(INITIAL); }
-  .|\n     ; 
+  .|\n     ;
+  <<EOF>> {
+  fprintf(outfile, "%-30s %s\n", "ERROR COMENTARIO NO CERRADO", yytext);
+  BEGIN(INITIAL); 
+    }
 }
 
 {COMILLA_DOBLE} {

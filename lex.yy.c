@@ -352,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 104
-#define YY_END_OF_BUFFER 105
+#define YY_NUM_RULES 105
+#define YY_END_OF_BUFFER 106
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -363,41 +363,41 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[324] =
     {   0,
-        0,    0,    0,    0,    0,    0,  105,  103,   86,   85,
-       87,   66,  100,   88,   69,   72,  103,   83,   84,   56,
-       54,   78,   55,   76,   57,   93,   59,   77,   49,   47,
-       50,   58,   92,   81,   82,   71,   92,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,   92,
-       92,   92,   79,  103,   80,   99,   99,  102,  101,   53,
-        0,    0,   70,   64,    0,   62,   67,    0,   93,   60,
-       68,   61,   73,   94,   97,   96,   63,   94,    0,   74,
-       51,   48,   52,   75,   92,   92,   92,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,   92,
+        0,    0,    0,    0,    0,    0,  106,  104,   87,   86,
+       88,   66,  101,   89,   69,   72,  104,   83,   84,   56,
+       54,   78,   55,   76,   57,   94,   59,   77,   49,   47,
+       50,   58,   93,   81,   82,   71,   93,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,   93,
+       93,   93,   79,  104,   80,  100,  100,  103,  102,   53,
+        0,    0,   70,   64,    0,   62,   67,    0,   94,   60,
+       68,   61,   73,   95,   98,   97,   63,   95,    0,   74,
+       51,   48,   52,   75,   93,   93,   93,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,   93,
 
-       28,   92,   92,   92,   92,   92,   26,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   65,   98,
-        0,    0,   95,   96,   94,   91,   92,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,    1,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,   92,
-       92,   92,   92,   92,   92,   92,    0,    0,   92,   92,
-       92,   92,   92,   92,   92,   92,   92,   29,    6,   92,
-       24,    7,   92,   92,   92,   92,   27,   11,   92,   92,
-       12,   92,    3,   92,   92,   92,   92,   92,   92,   92,
+       28,   93,   93,   93,   93,   93,   26,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   65,   99,
+        0,    0,   96,   97,   95,   92,   93,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,    1,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,   93,
+       93,   93,   93,   93,   93,   93,    0,    0,   93,   93,
+       93,   93,   93,   93,   93,   93,   93,   29,    6,   93,
+       24,    7,   93,   93,   93,   93,   27,   11,   93,   93,
+       12,   93,    3,   93,   93,   93,   93,   93,   93,   93,
 
-       92,   92,   92,   92,   92,   10,   92,   92,    0,    0,
-       92,   92,   40,   92,   92,   92,   92,   92,   92,   16,
-       23,   92,   92,   92,   92,    4,   92,   92,   92,   92,
-        2,   92,   92,   92,   92,   92,   92,   92,   34,   92,
-       92,   20,    0,    0,   92,   92,   92,   92,   92,   92,
-       92,   92,   92,   92,    5,   30,   13,   92,   92,   18,
-        8,   19,   21,   31,   17,   92,   33,   92,   92,   90,
-        0,   92,   92,   39,   92,   92,   92,   92,   92,   92,
-       92,   22,   92,   92,   32,   92,   92,   92,   89,   37,
-       38,   41,   42,   92,   92,   92,   92,   25,   14,   15,
+       93,   93,   93,   93,   93,   10,   93,   93,    0,    0,
+       93,   93,   40,   93,   93,   93,   93,   93,   93,   16,
+       23,   93,   93,   93,   93,    4,   93,   93,   93,   93,
+        2,   93,   93,   93,   93,   93,   93,   93,   34,   93,
+       93,   20,    0,    0,   93,   93,   93,   93,   93,   93,
+       93,   93,   93,   93,    5,   30,   13,   93,   93,   18,
+        8,   19,   21,   31,   17,   93,   33,   93,   93,   91,
+        0,   93,   93,   39,   93,   93,   93,   93,   93,   93,
+       93,   22,   93,   93,   32,   93,   93,   93,   90,   37,
+       38,   41,   42,   93,   93,   93,   93,   25,   14,   15,
 
-       92,    9,   36,   92,   44,   92,   92,   92,   43,   92,
-       92,   92,   92,   92,   92,   92,   92,   92,   92,   46,
+       93,    9,   36,   93,   44,   93,   93,   93,   43,   93,
+       93,   93,   93,   93,   93,   93,   93,   93,   93,   46,
        35,   45,    0
     } ;
 
@@ -921,7 +921,7 @@ YY_DECL
 		}
 
 	{
-#line 181 "analizador.l"
+#line 182 "analizador.l"
 
 #line 926 "lex.yy.c"
 
@@ -982,522 +982,534 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 182 "analizador.l"
+#line 183 "analizador.l"
 { escribirArchivo("PR_INT", yytext); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 183 "analizador.l"
+#line 184 "analizador.l"
 { escribirArchivo("PR_SHORT", yytext); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 184 "analizador.l"
+#line 185 "analizador.l"
 { escribirArchivo("PR_LONG", yytext); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 185 "analizador.l"
+#line 186 "analizador.l"
 { escribirArchivo("PR_FLOAT", yytext); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 186 "analizador.l"
+#line 187 "analizador.l"
 { escribirArchivo("PR_DOUB", yytext); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 187 "analizador.l"
+#line 188 "analizador.l"
 { escribirArchivo("PR_BOOL_C99", yytext); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 188 "analizador.l"
+#line 189 "analizador.l"
 { escribirArchivo("PR_CHAR", yytext); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 189 "analizador.l"
+#line 190 "analizador.l"
 { escribirArchivo("PR_SIGN", yytext); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 190 "analizador.l"
+#line 191 "analizador.l"
 { escribirArchivo("PR_UNSIGN", yytext); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 191 "analizador.l"
+#line 192 "analizador.l"
 { escribirArchivo("PR_VOID", yytext); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 192 "analizador.l"
+#line 193 "analizador.l"
 { escribirArchivo("PR_ENUM", yytext); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 193 "analizador.l"
+#line 194 "analizador.l"
 { escribirArchivo("PR_GOTO", yytext); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 194 "analizador.l"
+#line 195 "analizador.l"
 { escribirArchivo("PR_INLINE", yytext); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 195 "analizador.l"
+#line 196 "analizador.l"
 { escribirArchivo("PR_REGIS", yytext); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 196 "analizador.l"
+#line 197 "analizador.l"
 { escribirArchivo("PR_RESTRICT", yytext); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 197 "analizador.l"
+#line 198 "analizador.l"
 { escribirArchivo("PR_BREAK", yytext); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 198 "analizador.l"
+#line 199 "analizador.l"
 { escribirArchivo("PR_SWITCH", yytext); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 199 "analizador.l"
+#line 200 "analizador.l"
 { escribirArchivo("PR_RETURN", yytext); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 200 "analizador.l"
+#line 201 "analizador.l"
 { escribirArchivo("PR_SIZEOF", yytext); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 201 "analizador.l"
+#line 202 "analizador.l"
 { escribirArchivo("PR_WHILE", yytext); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 202 "analizador.l"
+#line 203 "analizador.l"
 { escribirArchivo("PR_STATIC", yytext); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 203 "analizador.l"
+#line 204 "analizador.l"
 { escribirArchivo("PR_DEFAULT", yytext); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 204 "analizador.l"
+#line 205 "analizador.l"
 { escribirArchivo("PR_CONST", yytext); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 205 "analizador.l"
+#line 206 "analizador.l"
 { escribirArchivo("PR_CASE", yytext); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 206 "analizador.l"
+#line 207 "analizador.l"
 { escribirArchivo("PR_CONTIN", yytext); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 207 "analizador.l"
+#line 208 "analizador.l"
 { escribirArchivo("PR_IF", yytext); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 208 "analizador.l"
+#line 209 "analizador.l"
 { escribirArchivo("PR_ELSE", yytext); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 209 "analizador.l"
+#line 210 "analizador.l"
 { escribirArchivo("PR_DO", yytext); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 210 "analizador.l"
+#line 211 "analizador.l"
 { escribirArchivo("PR_AUTO", yytext); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 211 "analizador.l"
+#line 212 "analizador.l"
 { escribirArchivo("PR_EXTERN", yytext); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 212 "analizador.l"
+#line 213 "analizador.l"
 { escribirArchivo("PR_STRUCT", yytext); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 213 "analizador.l"
+#line 214 "analizador.l"
 { escribirArchivo("PR_TYPEDEF", yytext); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 214 "analizador.l"
+#line 215 "analizador.l"
 { escribirArchivo("PR_TYPEOF", yytext); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 215 "analizador.l"
+#line 216 "analizador.l"
 { escribirArchivo("PR_UNION", yytext); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 216 "analizador.l"
+#line 217 "analizador.l"
 { escribirArchivo("PR_TYPEUNQ", yytext); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 217 "analizador.l"
+#line 218 "analizador.l"
 { escribirArchivo("PR_VOLATILE", yytext); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 218 "analizador.l"
+#line 219 "analizador.l"
 { escribirArchivo("PR_ALIGNAS", yytext); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 219 "analizador.l"
+#line 220 "analizador.l"
 { escribirArchivo("PR_ALIGNOF", yytext); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 220 "analizador.l"
+#line 221 "analizador.l"
 { escribirArchivo("PR_ATOMIC", yytext); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 221 "analizador.l"
+#line 222 "analizador.l"
 { escribirArchivo("PR_BOOL_CPP", yytext); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 222 "analizador.l"
+#line 223 "analizador.l"
 { escribirArchivo("PR_COMPLEX", yytext); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 223 "analizador.l"
+#line 224 "analizador.l"
 { escribirArchivo("PR_GENERIC", yytext); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 224 "analizador.l"
+#line 225 "analizador.l"
 { escribirArchivo("PR_IMAGINARY", yytext); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 225 "analizador.l"
+#line 226 "analizador.l"
 { escribirArchivo("PR_NORETURN", yytext); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 226 "analizador.l"
+#line 227 "analizador.l"
 { escribirArchivo("PR_STATIC_ASSERT", yytext); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 227 "analizador.l"
+#line 228 "analizador.l"
 { escribirArchivo("PR_THREAD_LOCAL", yytext); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 229 "analizador.l"
+#line 230 "analizador.l"
 { escribirArchivo("OP_ASIGNACION", yytext); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 230 "analizador.l"
+#line 231 "analizador.l"
 { escribirArchivo("OP_COMPARATIVO", yytext); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 231 "analizador.l"
+#line 232 "analizador.l"
 { escribirArchivo("OP_MENOR", yytext); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 232 "analizador.l"
+#line 233 "analizador.l"
 { escribirArchivo("OP_MAYOR", yytext); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 233 "analizador.l"
+#line 234 "analizador.l"
 { escribirArchivo("OP_MENOR_IGUAL", yytext); }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 234 "analizador.l"
+#line 235 "analizador.l"
 { escribirArchivo("OP_MAYOR_IGUAL", yytext); }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 235 "analizador.l"
+#line 236 "analizador.l"
 { escribirArchivo("OP_NOES_IGUAL", yytext); }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 236 "analizador.l"
+#line 237 "analizador.l"
 { escribirArchivo("OP_SUMA", yytext); }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 237 "analizador.l"
+#line 238 "analizador.l"
 { escribirArchivo("OP_RESTA", yytext); }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 238 "analizador.l"
+#line 239 "analizador.l"
 { escribirArchivo("OP_MULTIPLICACION", yytext); }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 239 "analizador.l"
+#line 240 "analizador.l"
 { escribirArchivo("OP_DIVISION", yytext); }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 240 "analizador.l"
+#line 241 "analizador.l"
 { escribirArchivo("OP_TERNARIO_IF", yytext); }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 241 "analizador.l"
+#line 242 "analizador.l"
 { escribirArchivo("OP_TERNARIO_ELSE", yytext); }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 242 "analizador.l"
+#line 243 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_SUMA", yytext); }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 243 "analizador.l"
+#line 244 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_RESTA", yytext); }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 244 "analizador.l"
+#line 245 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_MULTIP", yytext); }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 245 "analizador.l"
+#line 246 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_DIV", yytext); }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 246 "analizador.l"
+#line 247 "analizador.l"
 { escribirArchivo("OP_AND", yytext); }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 247 "analizador.l"
+#line 248 "analizador.l"
 { escribirArchivo("OP_OR", yytext); }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 248 "analizador.l"
+#line 249 "analizador.l"
 { escribirArchivo("OP_NEGACION", yytext); }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 249 "analizador.l"
+#line 250 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_INCREMENTAR", yytext); }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 250 "analizador.l"
+#line 251 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_DISMINUIR", yytext); }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 251 "analizador.l"
+#line 252 "analizador.l"
 { escribirArchivo("OP_MODULO", yytext); }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 252 "analizador.l"
+#line 253 "analizador.l"
 { escribirArchivo("OP_ASIGNACION_MOD", yytext); }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 253 "analizador.l"
+#line 254 "analizador.l"
 { escribirArchivo("OP_XOR", yytext); }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 254 "analizador.l"
+#line 255 "analizador.l"
 { escribirArchivo("OP_DIRECCION", yytext); }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 255 "analizador.l"
+#line 256 "analizador.l"
 { escribirArchivo("OP_MIEMBRO_PTR", yytext); }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 256 "analizador.l"
+#line 257 "analizador.l"
 { escribirArchivo("OP_IZQ", yytext); }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 257 "analizador.l"
+#line 258 "analizador.l"
 { escribirArchivo("OP_DER", yytext); }
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 259 "analizador.l"
+#line 260 "analizador.l"
 { escribirArchivo("SE_PUNTO", yytext); }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 260 "analizador.l"
+#line 261 "analizador.l"
 { escribirArchivo("SE_PUNTO_COMA", yytext); }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 261 "analizador.l"
+#line 262 "analizador.l"
 { escribirArchivo("SE_COMA", yytext); }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 263 "analizador.l"
+#line 264 "analizador.l"
 { escribirArchivo("LLAVE_AP", yytext); }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 264 "analizador.l"
+#line 265 "analizador.l"
 { escribirArchivo("LLAVE_CE", yytext); }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 265 "analizador.l"
+#line 266 "analizador.l"
 { escribirArchivo("CORCHETE_AP", yytext); }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 266 "analizador.l"
+#line 267 "analizador.l"
 { escribirArchivo("CORCHETE_CE", yytext); }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 267 "analizador.l"
+#line 268 "analizador.l"
 { escribirArchivo("PARENTESIS_AP", yytext); }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 268 "analizador.l"
+#line 269 "analizador.l"
 { escribirArchivo("PARENTESIS_CE", yytext); }
 	YY_BREAK
 case 85:
-/* rule 85 can match eol */
 YY_RULE_SETUP
 #line 270 "analizador.l"
-{}
+{ escribirArchivo("SLASH", yytext); }
 	YY_BREAK
 case 86:
-YY_RULE_SETUP
-#line 271 "analizador.l"
-{}
-	YY_BREAK
-case 87:
+/* rule 86 can match eol */
 YY_RULE_SETUP
 #line 272 "analizador.l"
 {}
 	YY_BREAK
-case 88:
+case 87:
 YY_RULE_SETUP
 #line 273 "analizador.l"
-{ escribirArchivo("LIT_NUMERAL", yytext); }
+{}
+	YY_BREAK
+case 88:
+YY_RULE_SETUP
+#line 274 "analizador.l"
+{}
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
 #line 275 "analizador.l"
-{ escribirArchivo("PR_INCLUDE", yytext); }
+{ escribirArchivo("LIT_NUMERAL", yytext); }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 276 "analizador.l"
-{ escribirArchivo("PR_DEFINE", yytext); }
+#line 277 "analizador.l"
+{ escribirArchivo("PR_INCLUDE", yytext); }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
 #line 278 "analizador.l"
-{ escribirArchivo("HEADER", yytext); }
+{ escribirArchivo("PR_DEFINE", yytext); }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 279 "analizador.l"
+#line 280 "analizador.l"
+{ escribirArchivo("HEADER", yytext); }
+	YY_BREAK
+case 93:
+YY_RULE_SETUP
+#line 281 "analizador.l"
 { 
   escribirArchivo("IDENTIFICADOR", yytext);
   escribirTabla("IDENTIFICADOR", yytext, idCount);
 }
 	YY_BREAK
-case 93:
+case 94:
 YY_RULE_SETUP
-#line 284 "analizador.l"
+#line 286 "analizador.l"
 { 
     if (verificarRango(yytext)) { 
         escribirArchivo("LIT_INT", yytext); 
     } 
 }
 	YY_BREAK
-case 94:
-YY_RULE_SETUP
-#line 290 "analizador.l"
-{ escribirArchivo("LIT_FLOAT", yytext); }
-	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 291 "analizador.l"
-{ escribirArchivo("LIT_CHAR", yytext); }
+#line 292 "analizador.l"
+{ escribirArchivo("LIT_FLOAT", yytext); }
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
-#line 294 "analizador.l"
-{}
+#line 293 "analizador.l"
+{ escribirArchivo("LIT_CHAR", yytext); }
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
 #line 296 "analizador.l"
-{ BEGIN(COMENTARIO_M); }
+{}
 	YY_BREAK
-
 case 98:
 YY_RULE_SETUP
 #line 298 "analizador.l"
-{ BEGIN(INITIAL); }
-	YY_BREAK
-case 99:
-/* rule 99 can match eol */
-YY_RULE_SETUP
-#line 299 "analizador.l"
-; 
+{ BEGIN(COMENTARIO_M); }
 	YY_BREAK
 
-case 100:
+case 99:
 YY_RULE_SETUP
+#line 300 "analizador.l"
+{ BEGIN(INITIAL); }
+	YY_BREAK
+case 100:
+/* rule 100 can match eol */
+YY_RULE_SETUP
+#line 301 "analizador.l"
+;
+	YY_BREAK
+case YY_STATE_EOF(COMENTARIO_M):
 #line 302 "analizador.l"
+{
+  fprintf(outfile, "%-30s %s\n", "ERROR COMENTARIO NO CERRADO", yytext);
+  BEGIN(INITIAL); 
+    }
+	YY_BREAK
+
+case 101:
+YY_RULE_SETUP
+#line 308 "analizador.l"
 {
   strcat(stringBuffer, "\"");
   BEGIN(STRING); 
 }
 	YY_BREAK
 
-case 101:
+case 102:
 YY_RULE_SETUP
-#line 307 "analizador.l"
+#line 313 "analizador.l"
 {
     strcat(stringBuffer, "\"");
     escribirArchivo("LIT_STRING", stringBuffer);
@@ -1505,26 +1517,25 @@ YY_RULE_SETUP
     BEGIN(INITIAL); 
   }
 	YY_BREAK
-case 102:
-/* rule 102 can match eol */
+case 103:
+/* rule 103 can match eol */
 YY_RULE_SETUP
-#line 313 "analizador.l"
+#line 319 "analizador.l"
 {strncat(stringBuffer, yytext, 1);}
 	YY_BREAK
 
-case 103:
-YY_RULE_SETUP
-#line 316 "analizador.l"
-{ escribirArchivo("Caracter no reconocido", yytext); }
-	YY_BREAK
 case 104:
 YY_RULE_SETUP
-#line 319 "analizador.l"
+#line 322 "analizador.l"
+{ escribirArchivo("Caracter no reconocido", yytext); }
+	YY_BREAK
+case 105:
+YY_RULE_SETUP
+#line 325 "analizador.l"
 ECHO;
 	YY_BREAK
-#line 1525 "lex.yy.c"
+#line 1537 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
-case YY_STATE_EOF(COMENTARIO_M):
 case YY_STATE_EOF(STRING):
 	yyterminate();
 
@@ -2529,7 +2540,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 319 "analizador.l"
+#line 325 "analizador.l"
 
 
 int main(int argc, char **argv) {
