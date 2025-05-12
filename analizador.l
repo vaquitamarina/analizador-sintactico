@@ -136,6 +136,8 @@ OP_ASIGNACION_MOD          "%="
 OP_XOR                     "^"
 OP_DIRECCION               "&"
 OP_MIEMBRO_PTR             "->"
+OP_IZQ                     "<<"
+OP_DER                     ">>"
 
 SE_PUNTO                   "."
 SE_PUNTO_COMA              ";"
@@ -251,10 +253,12 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {OP_XOR}                     { escribirArchivo("OP_XOR", yytext); }
 {OP_DIRECCION}               { escribirArchivo("OP_DIRECCION", yytext); }
 {OP_MIEMBRO_PTR}             { escribirArchivo("OP_MIEMBRO_PTR", yytext); }
+{OP_IZQ}                     { escribirArchivo("OP_IZQ", yytext); }
+{OP_DER}                     { escribirArchivo("OP_DER", yytext); }
 
 {SE_PUNTO}                   { escribirArchivo("SE_PUNTO", yytext); }
 {SE_PUNTO_COMA}              { escribirArchivo("SE_PUNTO_COMA", yytext); }
-{SE_COMA}                { escribirArchivo("SE_COMA", yytext); }
+{SE_COMA}                    { escribirArchivo("SE_COMA", yytext); }
 
 {LLAVE_AP}                   { escribirArchivo("LLAVE_AP", yytext); }
 {LLAVE_CE}                   { escribirArchivo("LLAVE_CE", yytext); }
@@ -266,12 +270,12 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {SALTO_LINEA}                {}
 {TAB}                        {}
 {ESPACIO}                    {}
-{SE_HASH}                { escribirArchivo("LIT_NUMERAL", yytext); }
+{SE_HASH}                    { escribirArchivo("LIT_NUMERAL", yytext); }
 
-{PR_INCLUDE}         { escribirArchivo("PR_INCLUDE", yytext); }
-{PR_DEFINE}          { escribirArchivo("PR_DEFINE", yytext); }
+{PR_INCLUDE}                 { escribirArchivo("PR_INCLUDE", yytext); }
+{PR_DEFINE}                  { escribirArchivo("PR_DEFINE", yytext); }
 
-{HEADER} { escribirArchivo("HEADER", yytext); }
+{HEADER}                     { escribirArchivo("HEADER", yytext); }
 {IDENTIFICADOR} { 
   escribirArchivo("IDENTIFICADOR", yytext);
   escribirTabla("IDENTIFICADOR", yytext, idCount);
@@ -282,15 +286,16 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
         escribirArchivo("LIT_INT", yytext); 
     } 
 }
-{FLOAT} { escribirArchivo("LIT_FLOAT", yytext); }
-{CHAR} { escribirArchivo("LIT_CHAR", yytext); }
+
+{FLOAT}                      { escribirArchivo("LIT_FLOAT", yytext); }
+{CHAR}                       { escribirArchivo("LIT_CHAR", yytext); }
 
 
-{COMENTARIO_LINEA}  {}
+{COMENTARIO_LINEA}           {}
 
 {COMENTARIO_AP} { BEGIN(COMENTARIO_M); }
 <COMENTARIO_M>{
-  {COMENTARIO_CE}  { BEGIN(INITIAL); }
+  {COMENTARIO_CE} { BEGIN(INITIAL); }
   .|\n     ; 
 }
 
@@ -299,7 +304,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
   BEGIN(STRING); 
 }
 <STRING>{
-  {COMILLA_DOBLE}  {
+  {COMILLA_DOBLE} {
     strcat(stringBuffer, "\"");
     escribirArchivo("LIT_STRING", stringBuffer);
     strcpy(stringBuffer, "");
@@ -308,7 +313,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
   .|\n     {strncat(stringBuffer, yytext, 1);}
 }
 
-.                             { escribirArchivo("Caracter no reconocido", yytext); }
+.                            { escribirArchivo("Caracter no reconocido", yytext); }
 
 
 %%
@@ -328,11 +333,13 @@ int main(int argc, char **argv) {
 
   fprintf(outfile, "%-30s %s\n", "TOKEN", "LEXEMA");
   fprintf(outfile, "--------------------------------------\n");
+  fprintf(table, "%-30s %s\n", "ID", "LEXEMA");
+  fprintf(table, "--------------------------------------\n");
 	if ( argc > 0 ) yyin = fopen( argv[0], "r" ); 
 	else yyin = stdin; yylex();
 
   for (int i = 0; i < idCount; i++) {
-    fprintf(table, "%d: %s\n", idTable[i].id, idTable[i].lexema);
+    fprintf(table, "%-30d %s\n", idTable[i].id, idTable[i].lexema);
   }
 
   fclose(outfile);
