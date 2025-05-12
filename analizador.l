@@ -226,6 +226,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {PR_STATIC_ASSERT}      { escribirArchivo("PR_STATIC_ASSERT", yytext); }
 {PR_THREAD_LOCAL}       { escribirArchivo("PR_THREAD_LOCAL", yytext); }
 
+{COMILLA_SIMPLE}             { escribirArchivo("COMILLA_SIMPLE", yytext); }
 {OP_ASIGNACION}              { escribirArchivo("OP_ASIGNACION", yytext); }
 {OP_COMPARATIVO}             { escribirArchivo("OP_COMPARATIVO", yytext); }
 {OP_MENOR}                   { escribirArchivo("OP_MENOR", yytext); }
