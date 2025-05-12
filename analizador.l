@@ -171,7 +171,7 @@ DIGITO [0-9]
 LETRA [a-zA-Z]
 
 INT [+-]?{DIGITO}+
-FLOAT [+-]?({DIGITO}+"."{DIGITO}*|"."{DIGITO}+)
+FLOAT [+-]?({DIGITO}+"."{DIGITO}*|"."{DIGITO}+|{DIGITO}+)([eE][+-]?{DIGITO}+)?
 CHAR {COMILLA_SIMPLE}.{COMILLA_SIMPLE}
 
 HEADER {OP_MENOR}[^<>\t\n ]+{OP_MAYOR}

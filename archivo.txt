@@ -1,9 +1,6 @@
 TOKEN                          LEXEMA
 --------------------------------------
-PR_INT                         int
-OP_ASIGNACION                  =
-LIT_INT                        3
-SE_PUNTO_COMA                  ;
-INVALID_STRING                 "string incompleto
-    int = 5;
-
+LIT_FLOAT                      123e10
+LIT_FLOAT                      123E-10
+LIT_FLOAT                      .456e+5
+LIT_FLOAT                      -123.456E10
