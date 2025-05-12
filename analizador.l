@@ -299,7 +299,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
   {COMENTARIO_CE} { BEGIN(INITIAL); }
   .|\n     ;
   <<EOF>> {
-  fprintf(outfile, "%-30s %s\n", "ERROR COMENTARIO NO CERRADO", yytext);
+  escribirArchivo("ERROR COMENTARIO NO CERRADO", yytext);
   BEGIN(INITIAL); 
     }
 }
@@ -316,6 +316,11 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
     BEGIN(INITIAL); 
   }
   .|\n     {strncat(stringBuffer, yytext, 1);}
+  <<EOF>> {
+    escribirArchivo("INVALID_STRING", stringBuffer);
+    strcpy(stringBuffer, "");
+    BEGIN(INITIAL); 
+  }
 }
 
 .                            { escribirArchivo("Caracter no reconocido", yytext); }
