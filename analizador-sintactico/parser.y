@@ -1,0 +1,73 @@
+%{
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    extern int yylex();
+    extern char *yytext;
+    extern FILE *yyin;
+    void yyerror(const char *s);
+%}
+
+%token PR_INT PR_SHORT PR_LONG PR_FLOAT PR_DOUB PR_BOOL_C99 PR_CHAR PR_SIGN PR_UNSIGN
+%token PR_VOID PR_ENUM PR_GOTO PR_INLINE PR_REGIS PR_RESTRICT PR_BREAK PR_SWITCH
+%token PR_RETURN PR_SIZEOF PR_WHILE PR_STATIC PR_DEFAULT PR_CONST PR_CASE PR_CONTIN
+%token PR_IF PR_ELSE PR_DO PR_AUTO PR_EXTERN PR_STRUCT PR_TYPEDEF PR_TYPEOF PR_UNION
+%token PR_TYPEUNQ PR_VOLATILE PR_ALIGNAS PR_ALIGNOF PR_ATOMIC PR_BOOL_CPP
+%token PR_COMPLEX PR_GENERIC PR_IMAGINARY PR_NORETURN PR_STATIC_ASSERT PR_THREAD_LOCAL
+
+%token COMILLA_SIMPLE
+
+%token OP_ASIGNACION OP_COMPARATIVO OP_MENOR OP_MAYOR OP_MENOR_IGUAL OP_MAYOR_IGUAL
+%token OP_NOES_IGUAL OP_SUMA OP_RESTA OP_MULTIPLICACION OP_DIVISION
+%token OP_TERNARIO_IF OP_TERNARIO_ELSE OP_ASIGNACION_SUMA OP_ASIGNACION_RESTA
+%token OP_ASIGNACION_MULTIP OP_ASIGNACION_DIV OP_AND OP_OR OP_NEGACION
+%token OP_ASIGNACION_INCREMENTAR OP_ASIGNACION_DISMINUIR OP_MODULO OP_ASIGNACION_MOD
+%token OP_XOR OP_DIRECCION OP_MIEMBRO_PTR OP_IZQ OP_DER
+
+%token SE_PUNTO SE_PUNTO_COMA SE_COMA
+%token LLAVE_AP LLAVE_CE CORCHETE_AP CORCHETE_CE PARENTESIS_AP PARENTESIS_CE
+
+%token SALTO_LINEA TAB ESPACIO SE_HASH
+
+%token PR_INCLUDE PR_DEFINE
+
+%token HEADER IDENTIFICADOR
+
+%token LIT_INT LIT_FLOAT LIT_CHAR LIT_STRING INVALID_STRING
+
+%token DESCONOCIDO
+
+%start inicio
+
+%%
+
+inicio:
+    tipo list_id SE_PUNTO_COMA {
+        printf("Declaración de tipo %s con identificadores: ", yytext);
+    }
+    ;
+list_id:
+    IDENTIFICADOR
+    | IDENTIFICADOR SE_COMA list_id
+    ;
+tipo:
+    PR_INT
+    | PR_FLOAT
+    | PR_CHAR
+    ;
+
+%%
+void yyerror(const char *s) {
+    fprintf(stderr, "Error de sintaxis: %s\n", s);
+}
+
+int main(int argc, char **argv){
+    if(argc > 1) {
+        yyin = fopen(argv[1], "rt");
+    }
+    else {
+        yyin = stdin;
+    }
+    yyparse();
+    return 0;
+}
