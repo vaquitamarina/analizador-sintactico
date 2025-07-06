@@ -16,6 +16,8 @@ typedef struct {
   char token[20];
 } Id;
 
+//ERRROR SEGMAUNT DDEFAULT, POR NO ABRIR EL ARCHIVO DE OUTFILE(SE BORRO EL MAIN)
+
 Id idTable[100];
 
 void escribirArchivo(const char* token, const char* lexema);
