@@ -954,515 +954,517 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 147 "analizador.l"
-{ escribirArchivo("PR_INT", yytext); }
+{ escribirArchivo("PR_INT", yytext); return PR_INT; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 148 "analizador.l"
-{ escribirArchivo("PR_SHORT", yytext); }
+{ escribirArchivo("PR_SHORT", yytext); return PR_SHORT; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 149 "analizador.l"
-{ escribirArchivo("PR_LONG", yytext); }
+{ escribirArchivo("PR_LONG", yytext); return PR_LONG; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 150 "analizador.l"
-{ escribirArchivo("PR_FLOAT", yytext); }
+{ escribirArchivo("PR_FLOAT", yytext); return PR_FLOAT; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 151 "analizador.l"
-{ escribirArchivo("PR_DOUB", yytext); }
+{ escribirArchivo("PR_DOUB", yytext); return PR_DOUB; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 152 "analizador.l"
-{ escribirArchivo("PR_BOOL_C99", yytext); }
+{ escribirArchivo("PR_BOOL_C99", yytext);  return PR_BOOL_C99; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 153 "analizador.l"
-{ escribirArchivo("PR_CHAR", yytext); }
+{ escribirArchivo("PR_CHAR", yytext); return PR_CHAR; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 154 "analizador.l"
-{ escribirArchivo("PR_SIGN", yytext); }
+{ escribirArchivo("PR_SIGN", yytext);  return PR_SIGN; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 155 "analizador.l"
-{ escribirArchivo("PR_UNSIGN", yytext); }
+{ escribirArchivo("PR_UNSIGN", yytext); return PR_UNSIGN; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 156 "analizador.l"
-{ escribirArchivo("PR_VOID", yytext); }
+{ escribirArchivo("PR_VOID", yytext); return PR_VOID; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 157 "analizador.l"
-{ escribirArchivo("PR_ENUM", yytext); }
+{ escribirArchivo("PR_ENUM", yytext); return PR_ENUM; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 158 "analizador.l"
-{ escribirArchivo("PR_GOTO", yytext); }
+{ escribirArchivo("PR_GOTO", yytext); return PR_GOTO; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 159 "analizador.l"
-{ escribirArchivo("PR_INLINE", yytext); }
+{ escribirArchivo("PR_INLINE", yytext); return PR_INLINE; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 160 "analizador.l"
-{ escribirArchivo("PR_REGIS", yytext); }
+{ escribirArchivo("PR_REGIS", yytext); return PR_REGIS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 161 "analizador.l"
-{ escribirArchivo("PR_RESTRICT", yytext); }
+{ escribirArchivo("PR_RESTRICT", yytext); return PR_RESTRICT; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 162 "analizador.l"
-{ escribirArchivo("PR_BREAK", yytext); }
+{ escribirArchivo("PR_BREAK", yytext); return PR_BREAK; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 163 "analizador.l"
-{ escribirArchivo("PR_SWITCH", yytext); }
+{ escribirArchivo("PR_SWITCH", yytext); return PR_SWITCH; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 164 "analizador.l"
-{ escribirArchivo("PR_RETURN", yytext); }
+{ escribirArchivo("PR_RETURN", yytext); return PR_RETURN; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 165 "analizador.l"
-{ escribirArchivo("PR_SIZEOF", yytext); }
+{ escribirArchivo("PR_SIZEOF", yytext); return PR_SIZEOF; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 166 "analizador.l"
-{ escribirArchivo("PR_WHILE", yytext); }
+{ escribirArchivo("PR_WHILE", yytext); return PR_WHILE; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 167 "analizador.l"
-{ escribirArchivo("PR_STATIC", yytext); }
+{ escribirArchivo("PR_STATIC", yytext); return PR_STATIC; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 168 "analizador.l"
-{ escribirArchivo("PR_DEFAULT", yytext); }
+{ escribirArchivo("PR_DEFAULT", yytext); return PR_DEFAULT; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 169 "analizador.l"
-{ escribirArchivo("PR_CONST", yytext); }
+{ escribirArchivo("PR_CONST", yytext); return PR_CONST; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 170 "analizador.l"
-{ escribirArchivo("PR_CASE", yytext); }
+{ escribirArchivo("PR_CASE", yytext); return PR_CASE; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 171 "analizador.l"
-{ escribirArchivo("PR_CONTIN", yytext); }
+{ escribirArchivo("PR_CONTIN", yytext); return PR_CONTIN; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 172 "analizador.l"
-{ escribirArchivo("PR_IF", yytext); }
+{ escribirArchivo("PR_IF", yytext); return PR_IF; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 173 "analizador.l"
-{ escribirArchivo("PR_ELSE", yytext); }
+{ escribirArchivo("PR_ELSE", yytext); return PR_ELSE; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 174 "analizador.l"
-{ escribirArchivo("PR_DO", yytext); }
+{ escribirArchivo("PR_DO", yytext); return PR_DO; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 175 "analizador.l"
-{ escribirArchivo("PR_AUTO", yytext); }
+{ escribirArchivo("PR_AUTO", yytext); return PR_AUTO; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 176 "analizador.l"
-{ escribirArchivo("PR_EXTERN", yytext); }
+{ escribirArchivo("PR_EXTERN", yytext); return PR_EXTERN; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 177 "analizador.l"
-{ escribirArchivo("PR_STRUCT", yytext); }
+{ escribirArchivo("PR_STRUCT", yytext); return PR_STRUCT; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 178 "analizador.l"
-{ escribirArchivo("PR_TYPEDEF", yytext); }
+{ escribirArchivo("PR_TYPEDEF", yytext); return PR_TYPEDEF; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 179 "analizador.l"
-{ escribirArchivo("PR_TYPEOF", yytext); }
+{ escribirArchivo("PR_TYPEOF", yytext); return PR_TYPEOF; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 180 "analizador.l"
-{ escribirArchivo("PR_UNION", yytext); }
+{ escribirArchivo("PR_UNION", yytext); return PR_UNION; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 181 "analizador.l"
-{ escribirArchivo("PR_TYPEUNQ", yytext); }
+{ escribirArchivo("PR_TYPEUNQ", yytext); return PR_TYPEUNQ; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 182 "analizador.l"
-{ escribirArchivo("PR_VOLATILE", yytext); }
+{ escribirArchivo("PR_VOLATILE", yytext); return PR_VOLATILE; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 183 "analizador.l"
-{ escribirArchivo("PR_ALIGNAS", yytext); }
+{ escribirArchivo("PR_ALIGNAS", yytext); return PR_ALIGNAS; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 184 "analizador.l"
-{ escribirArchivo("PR_ALIGNOF", yytext); }
+{ escribirArchivo("PR_ALIGNOF", yytext); return PR_ALIGNOF; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 185 "analizador.l"
-{ escribirArchivo("PR_ATOMIC", yytext); }
+{ escribirArchivo("PR_ATOMIC", yytext); return PR_ATOMIC; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 186 "analizador.l"
-{ escribirArchivo("PR_BOOL_CPP", yytext); }
+{ escribirArchivo("PR_BOOL_CPP", yytext); return PR_BOOL_CPP; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 187 "analizador.l"
-{ escribirArchivo("PR_COMPLEX", yytext); }
+{ escribirArchivo("PR_COMPLEX", yytext); return PR_COMPLEX; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 188 "analizador.l"
-{ escribirArchivo("PR_GENERIC", yytext); }
+{ escribirArchivo("PR_GENERIC", yytext); return PR_GENERIC; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 189 "analizador.l"
-{ escribirArchivo("PR_IMAGINARY", yytext); }
+{ escribirArchivo("PR_IMAGINARY", yytext); return PR_IMAGINARY; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 190 "analizador.l"
-{ escribirArchivo("PR_NORETURN", yytext); }
+{ escribirArchivo("PR_NORETURN", yytext); return PR_NORETURN; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 191 "analizador.l"
-{ escribirArchivo("PR_STATIC_ASSERT", yytext); }
+{ escribirArchivo("PR_STATIC_ASSERT", yytext); return PR_STATIC_ASSERT; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 192 "analizador.l"
-{ escribirArchivo("PR_THREAD_LOCAL", yytext); }
+{ escribirArchivo("PR_THREAD_LOCAL", yytext); return PR_THREAD_LOCAL; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 194 "analizador.l"
-{ escribirArchivo("COMILLA_SIMPLE", yytext); }
+{ escribirArchivo("COMILLA_SIMPLE", yytext); return COMILLA_SIMPLE; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 195 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION", yytext); }
+{ escribirArchivo("OP_ASIGNACION", yytext); return OP_ASIGNACION; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 196 "analizador.l"
-{ escribirArchivo("OP_COMPARATIVO", yytext); }
+{ escribirArchivo("OP_COMPARATIVO", yytext); return OP_COMPARATIVO; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 197 "analizador.l"
-{ escribirArchivo("OP_MENOR", yytext); }
+{ escribirArchivo("OP_MENOR", yytext); return OP_MENOR; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 198 "analizador.l"
-{ escribirArchivo("OP_MAYOR", yytext); }
+{ escribirArchivo("OP_MAYOR", yytext); return OP_MAYOR; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
 #line 199 "analizador.l"
-{ escribirArchivo("OP_MENOR_IGUAL", yytext); }
+{ escribirArchivo("OP_MENOR_IGUAL", yytext); return OP_MENOR_IGUAL; }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
 #line 200 "analizador.l"
-{ escribirArchivo("OP_MAYOR_IGUAL", yytext); }
+{ escribirArchivo("OP_MAYOR_IGUAL", yytext); return OP_MAYOR_IGUAL; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
 #line 201 "analizador.l"
-{ escribirArchivo("OP_NOES_IGUAL", yytext); }
+{ escribirArchivo("OP_NOES_IGUAL", yytext); return OP_NOES_IGUAL; }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
 #line 202 "analizador.l"
-{ escribirArchivo("OP_SUMA", yytext); }
+{ escribirArchivo("OP_SUMA", yytext); return OP_SUMA; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
 #line 203 "analizador.l"
-{ escribirArchivo("OP_RESTA", yytext); }
+{ escribirArchivo("OP_RESTA", yytext); return OP_RESTA; }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
 #line 204 "analizador.l"
-{ escribirArchivo("OP_MULTIPLICACION", yytext); }
+{ escribirArchivo("OP_MULTIPLICACION", yytext); return OP_MULTIPLICACION; }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
 #line 205 "analizador.l"
-{ escribirArchivo("OP_DIVISION", yytext); }
+{ escribirArchivo("OP_DIVISION", yytext); return OP_DIVISION; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
 #line 206 "analizador.l"
-{ escribirArchivo("OP_TERNARIO_IF", yytext); }
+{ escribirArchivo("OP_TERNARIO_IF", yytext); return OP_TERNARIO_IF; }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
 #line 207 "analizador.l"
-{ escribirArchivo("OP_TERNARIO_ELSE", yytext); }
+{ escribirArchivo("OP_TERNARIO_ELSE", yytext); return OP_TERNARIO_ELSE; }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
 #line 208 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_SUMA", yytext); }
+{ escribirArchivo("OP_ASIGNACION_SUMA", yytext); return OP_ASIGNACION_SUMA; }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
 #line 209 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_RESTA", yytext); }
+{ escribirArchivo("OP_ASIGNACION_RESTA", yytext); return OP_ASIGNACION_RESTA; }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
 #line 210 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_MULTIP", yytext); }
+{ escribirArchivo("OP_ASIGNACION_MULTIP", yytext); return OP_ASIGNACION_MULTIP; }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
 #line 211 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_DIV", yytext); }
+{ escribirArchivo("OP_ASIGNACION_DIV", yytext); return OP_ASIGNACION_DIV; }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
 #line 212 "analizador.l"
-{ escribirArchivo("OP_AND", yytext); }
+{ escribirArchivo("OP_AND", yytext); return OP_AND; }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
 #line 213 "analizador.l"
-{ escribirArchivo("OP_OR", yytext); }
+{ escribirArchivo("OP_OR", yytext); return OP_OR; }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
 #line 214 "analizador.l"
-{ escribirArchivo("OP_NEGACION", yytext); }
+{ escribirArchivo("OP_NEGACION", yytext); return OP_NEGACION; }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
 #line 215 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_INCREMENTAR", yytext); }
+{ escribirArchivo("OP_ASIGNACION_INCREMENTAR", yytext); return OP_ASIGNACION_INCREMENTAR; }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
 #line 216 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_DISMINUIR", yytext); }
+{ escribirArchivo("OP_ASIGNACION_DISMINUIR", yytext); return OP_ASIGNACION_DISMINUIR; }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
 #line 217 "analizador.l"
-{ escribirArchivo("OP_MODULO", yytext); }
+{ escribirArchivo("OP_MODULO", yytext); return OP_MODULO; }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
 #line 218 "analizador.l"
-{ escribirArchivo("OP_ASIGNACION_MOD", yytext); }
+{ escribirArchivo("OP_ASIGNACION_MOD", yytext); return OP_ASIGNACION_MOD; }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
 #line 219 "analizador.l"
-{ escribirArchivo("OP_XOR", yytext); }
+{ escribirArchivo("OP_XOR", yytext); return OP_XOR; }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
 #line 220 "analizador.l"
-{ escribirArchivo("OP_DIRECCION", yytext); }
+{ escribirArchivo("OP_DIRECCION", yytext); return OP_DIRECCION; }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
 #line 221 "analizador.l"
-{ escribirArchivo("OP_MIEMBRO_PTR", yytext); }
+{ escribirArchivo("OP_MIEMBRO_PTR", yytext); return OP_MIEMBRO_PTR; }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
 #line 222 "analizador.l"
-{ escribirArchivo("OP_IZQ", yytext); }
+{ escribirArchivo("OP_IZQ", yytext); return OP_IZQ; }
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
 #line 223 "analizador.l"
-{ escribirArchivo("OP_DER", yytext); }
+{ escribirArchivo("OP_DER", yytext); return OP_DER; }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
 #line 225 "analizador.l"
-{ escribirArchivo("SE_PUNTO", yytext); }
+{ escribirArchivo("SE_PUNTO", yytext); return SE_PUNTO; }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
 #line 226 "analizador.l"
-{ escribirArchivo("SE_PUNTO_COMA", yytext); }
+{ escribirArchivo("SE_PUNTO_COMA", yytext); return SE_PUNTO_COMA; }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
 #line 227 "analizador.l"
-{ escribirArchivo("SE_COMA", yytext); }
+{ escribirArchivo("SE_COMA", yytext); return SE_COMA; }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
 #line 229 "analizador.l"
-{ escribirArchivo("LLAVE_AP", yytext); }
+{ escribirArchivo("LLAVE_AP", yytext); return LLAVE_AP; }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
 #line 230 "analizador.l"
-{ escribirArchivo("LLAVE_CE", yytext); }
+{ escribirArchivo("LLAVE_CE", yytext); return LLAVE_CE; }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
 #line 231 "analizador.l"
-{ escribirArchivo("CORCHETE_AP", yytext); }
+{ escribirArchivo("CORCHETE_AP", yytext); return CORCHETE_AP; }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
 #line 232 "analizador.l"
-{ escribirArchivo("CORCHETE_CE", yytext); }
+{ escribirArchivo("CORCHETE_CE", yytext); return CORCHETE_CE; }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
 #line 233 "analizador.l"
-{ escribirArchivo("PARENTESIS_AP", yytext); }
+{ escribirArchivo("PARENTESIS_AP", yytext); return PARENTESIS_AP; }
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
 #line 234 "analizador.l"
-{ escribirArchivo("PARENTESIS_CE", yytext); }
+{ escribirArchivo("PARENTESIS_CE", yytext); return PARENTESIS_CE; }
 	YY_BREAK
 case 86:
 /* rule 86 can match eol */
 YY_RULE_SETUP
 #line 236 "analizador.l"
-{}
+{ return SALTO_LINEA; }
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
 #line 237 "analizador.l"
-{}
+{ return TAB; }
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
 #line 238 "analizador.l"
-{}
+{ return ESPACIO; }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
 #line 239 "analizador.l"
-{ escribirArchivo("LIT_NUMERAL", yytext); }
+{ escribirArchivo("LIT_NUMERAL", yytext); return SE_HASH; }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
 #line 241 "analizador.l"
-{ escribirArchivo("PR_INCLUDE", yytext); }
+{ escribirArchivo("PR_INCLUDE", yytext); return PR_INCLUDE; }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
 #line 242 "analizador.l"
-{ escribirArchivo("PR_DEFINE", yytext); }
+{ escribirArchivo("PR_DEFINE", yytext); return PR_DEFINE; }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
 #line 244 "analizador.l"
-{ escribirArchivo("HEADER", yytext); }
+{ escribirArchivo("HEADER", yytext); return HEADER; }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
 #line 245 "analizador.l"
 { 
   escribirArchivo("IDENTIFICADOR", yytext);
+  return IDENTIFICADOR;
   escribirTabla("IDENTIFICADOR", yytext, idCount);
 }
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 250 "analizador.l"
+#line 251 "analizador.l"
 { 
-    if (verificarRango(yytext)) { 
+    if (verificarRango(yytext)) {
+        return LIT_INT
         escribirArchivo("LIT_INT", yytext); 
     } 
 }
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 256 "analizador.l"
-{ escribirArchivo("LIT_FLOAT", yytext); }
+#line 258 "analizador.l"
+{ escribirArchivo("LIT_FLOAT", yytext); return LIT_FLOAT; }
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
-#line 257 "analizador.l"
-{ escribirArchivo("LIT_CHAR", yytext); }
+#line 259 "analizador.l"
+{ escribirArchivo("LIT_CHAR", yytext);  return LIT_CHAR; }
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 260 "analizador.l"
+#line 262 "analizador.l"
 {}
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
-#line 262 "analizador.l"
+#line 264 "analizador.l"
 { BEGIN(COMENTARIO_M); }
 	YY_BREAK
 
 case 99:
 YY_RULE_SETUP
-#line 264 "analizador.l"
+#line 266 "analizador.l"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 100:
 /* rule 100 can match eol */
 YY_RULE_SETUP
-#line 265 "analizador.l"
+#line 267 "analizador.l"
 ;
 	YY_BREAK
 case YY_STATE_EOF(COMENTARIO_M):
-#line 266 "analizador.l"
+#line 268 "analizador.l"
 {
   escribirArchivo("ERROR COMENTARIO NO CERRADO", yytext);
   BEGIN(INITIAL); 
@@ -1471,7 +1473,7 @@ case YY_STATE_EOF(COMENTARIO_M):
 
 case 101:
 YY_RULE_SETUP
-#line 272 "analizador.l"
+#line 274 "analizador.l"
 {
   strcat(stringBuffer, "\"");
   BEGIN(STRING); 
@@ -1480,15 +1482,16 @@ YY_RULE_SETUP
 
 case 102:
 YY_RULE_SETUP
-#line 277 "analizador.l"
+#line 279 "analizador.l"
 {strncat(stringBuffer, yytext,2);}
 	YY_BREAK
 case 103:
 YY_RULE_SETUP
-#line 279 "analizador.l"
+#line 281 "analizador.l"
 {
     strcat(stringBuffer, "\"");
     escribirArchivo("LIT_STRING", stringBuffer);
+    return LIT_STRING;
     strcpy(stringBuffer, "");
     BEGIN(INITIAL); 
   }
@@ -1496,13 +1499,14 @@ YY_RULE_SETUP
 case 104:
 /* rule 104 can match eol */
 YY_RULE_SETUP
-#line 285 "analizador.l"
+#line 288 "analizador.l"
 {strncat(stringBuffer, yytext, 1);}
 	YY_BREAK
 case YY_STATE_EOF(STRING):
-#line 286 "analizador.l"
+#line 289 "analizador.l"
 {
     escribirArchivo("INVALID_STRING", stringBuffer);
+    return INVALID_STRING;
     strcpy(stringBuffer, "");
     BEGIN(INITIAL); 
   }
@@ -1510,15 +1514,15 @@ case YY_STATE_EOF(STRING):
 
 case 105:
 YY_RULE_SETUP
-#line 293 "analizador.l"
-{ escribirArchivo("Caracter no reconocido", yytext); }
+#line 297 "analizador.l"
+{ escribirArchivo("DESCONOCIDO", yytext); return DESCONOCIDO; }
 	YY_BREAK
 case 106:
 YY_RULE_SETUP
-#line 296 "analizador.l"
+#line 300 "analizador.l"
 ECHO;
 	YY_BREAK
-#line 1521 "lex.yy.c"
+#line 1525 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2523,7 +2527,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 296 "analizador.l"
+#line 300 "analizador.l"
 
 
 int main(int argc, char **argv) {
