@@ -1,1 +1,1 @@
-int ola;
+int ola, var1, var2;

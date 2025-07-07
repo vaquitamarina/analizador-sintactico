@@ -2,13 +2,14 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    extern int yylex();
+    extern int yylex(void);
     extern char *yytext;
     extern FILE *yyin;
-    void yyerror(const char *s);
+    void yyerror(char *s);
 %}
 
-%token PR_INT PR_SHORT PR_LONG PR_FLOAT PR_DOUB PR_BOOL_C99 PR_CHAR PR_SIGN PR_UNSIGN
+%token PR_INT 
+%token PR_SHORT PR_LONG PR_FLOAT PR_DOUB PR_BOOL_C99 PR_CHAR PR_SIGN PR_UNSIGN
 %token PR_VOID PR_ENUM PR_GOTO PR_INLINE PR_REGIS PR_RESTRICT PR_BREAK PR_SWITCH
 %token PR_RETURN PR_SIZEOF PR_WHILE PR_STATIC PR_DEFAULT PR_CONST PR_CASE PR_CONTIN
 %token PR_IF PR_ELSE PR_DO PR_AUTO PR_EXTERN PR_STRUCT PR_TYPEDEF PR_TYPEOF PR_UNION
@@ -24,14 +25,17 @@
 %token OP_ASIGNACION_INCREMENTAR OP_ASIGNACION_DISMINUIR OP_MODULO OP_ASIGNACION_MOD
 %token OP_XOR OP_DIRECCION OP_MIEMBRO_PTR OP_IZQ OP_DER
 
-%token SE_PUNTO SE_PUNTO_COMA SE_COMA
+%token SE_PUNTO 
+%token SE_PUNTO_COMA 
+%token SE_COMA
 %token LLAVE_AP LLAVE_CE CORCHETE_AP CORCHETE_CE PARENTESIS_AP PARENTESIS_CE
 
 %token SALTO_LINEA TAB ESPACIO SE_HASH
 
 %token PR_INCLUDE PR_DEFINE
 
-%token HEADER IDENTIFICADOR
+%token HEADER 
+%token IDENTIFICADOR
 
 %token LIT_INT LIT_FLOAT LIT_CHAR LIT_STRING INVALID_STRING
 
@@ -42,13 +46,13 @@
 %%
 
 inicio:
-    tipo list_id SE_PUNTO_COMA {
-        printf("Declaración de tipo %s con identificadores: ", yytext);
+    tipo listid SE_PUNTO_COMA {
+        printf("Declaración de tipo con identificadores.\n");
     }
     ;
-list_id:
+listid:
     IDENTIFICADOR
-    | IDENTIFICADOR SE_COMA list_id
+    | IDENTIFICADOR SE_COMA listid
     ;
 tipo:
     PR_INT
@@ -57,8 +61,8 @@ tipo:
     ;
 
 %%
-void yyerror(const char *s) {
-    fprintf(stderr, "Error de sintaxis: %s\n", s);
+void yyerror(char *s) {
+    printf("Error de sintaxis: %s\n", s);
 }
 
 int main(int argc, char **argv){
@@ -71,3 +75,4 @@ int main(int argc, char **argv){
     yyparse();
     return 0;
 }
+

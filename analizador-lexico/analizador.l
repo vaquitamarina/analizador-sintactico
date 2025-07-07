@@ -16,7 +16,6 @@ typedef struct {
   char token[20];
 } Id;
 
-//ERRROR SEGMAUNT DDEFAULT, POR NO ABRIR EL ARCHIVO DE OUTFILE(SE BORRO EL MAIN)
 
 Id idTable[100];
 
@@ -305,6 +304,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 int yywrap(){
 return 1;
 }
+
 void escribirArchivo(const char* token, const char* lexema) {
 }
 

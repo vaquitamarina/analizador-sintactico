@@ -277,10 +277,10 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    extern int yylex();
+    extern int yylex(void);
     extern char *yytext;
     extern FILE *yyin;
-    void yyerror(const char *s);
+    void yyerror(char *s);
 
 
 /* Enabling traces.  */
@@ -606,7 +606,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    45,    45,    50,    51,    54,    55,    56
+       0,    49,    49,    54,    55,    58,    59,    60
 };
 #endif
 
@@ -636,7 +636,7 @@ static const char *const yytname[] =
   "CORCHETE_CE", "PARENTESIS_AP", "PARENTESIS_CE", "SALTO_LINEA", "TAB",
   "ESPACIO", "SE_HASH", "PR_INCLUDE", "PR_DEFINE", "HEADER",
   "IDENTIFICADOR", "LIT_INT", "LIT_FLOAT", "LIT_CHAR", "LIT_STRING",
-  "INVALID_STRING", "DESCONOCIDO", "$accept", "inicio", "list_id", "tipo", 0
+  "INVALID_STRING", "DESCONOCIDO", "$accept", "inicio", "listid", "tipo", 0
 };
 #endif
 
@@ -1536,9 +1536,9 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 45 "parser.y"
+#line 49 "parser.y"
     {
-        printf("Declaración de tipo %s con identificadores: ", yytext);
+        printf("Declaración de tipo con identificadores.\n");
     ;}
     break;
 
@@ -1758,10 +1758,10 @@ yyreturn:
 }
 
 
-#line 59 "parser.y"
+#line 63 "parser.y"
 
-void yyerror(const char *s) {
-    fprintf(stderr, "Error de sintaxis: %s\n", s);
+void yyerror(char *s) {
+    printf("Error de sintaxis: %s\n", s);
 }
 
 int main(int argc, char **argv){
@@ -1774,3 +1774,5 @@ int main(int argc, char **argv){
     yyparse();
     return 0;
 }
+
+
