@@ -84,6 +84,12 @@ parametro:
 
 tipo:
     PR_INT
+    | PR_SHORT
+    | PR_LONG
+    | PR_FLOAT
+    | PR_DOUB
+    | PR_BOOL_C99
+    | PR_CHAR
     ;
 
 bloque:
@@ -97,9 +103,45 @@ lista_sentencias:
 
 sentencia:
     declaracion_variable
-    | 
+    | asignacion 
+    | sentencia_if
+    | sentencia_while
+    | sentencia_return
     ;
 
+asignacion:
+    IDENTIFICADOR OP_ASIGNACION expresion SE_PUNTO_COMA
+    ;
+
+expresion:
+    IDENTIFICADOR
+    | LIT_INT
+    | LIT_FLOAT
+    | LIT_CHAR
+    | LIT_STRING
+    ;
+
+condicion:
+    expresion OP_COMPARATIVO expresion
+    | expresion OP_MAYOR expresion
+    | expresion OP_MENOR expresion
+    | expresion OP_MAYOR_IGUAL expresion
+    | expresion OP_MENOR_IGUAL expresion
+    | expresion OP_NOES_IGUAL expresion
+    ;
+
+sentencia_if:
+    PR_IF PARENTESIS_AP condicion PARENTESIS_CE bloque
+    | PR_IF PARENTESIS_AP condicion PARENTESIS_CE bloque PR_ELSE bloque
+;
+
+sentencia_while:
+    PR_WHILE PARENTESIS_AP condicion PARENTESIS_CE bloque
+    ;
+
+sentencia_return:
+    PR_RETURN expresion SE_PUNTO_COMA
+    ;
 %%
 
 void yyerror(char *s) {
