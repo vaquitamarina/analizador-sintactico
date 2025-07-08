@@ -46,21 +46,62 @@
 %%
 
 inicio:
-    tipo listid SE_PUNTO_COMA {
-        printf("Declaración de tipo con identificadores.\n");
-    }
+    lista_declaraciones
     ;
-listid:
+
+lista_declaraciones:
+    declaracion
+    | declaracion lista_declaraciones
+    ;
+
+declaracion:
+    declaracion_variable
+    | declaracion_funcion
+    ;
+
+declaracion_variable:
+    tipo lista_identificadores SE_PUNTO_COMA
+    ;
+
+lista_identificadores:
     IDENTIFICADOR
-    | IDENTIFICADOR SE_COMA listid
+    | IDENTIFICADOR SE_COMA lista_identificadores
     ;
+
+declaracion_funcion:
+    tipo IDENTIFICADOR PARENTESIS_AP lista_parametros PARENTESIS_CE bloque
+    ;
+
+lista_parametros:
+    /* No hay parametros */
+    | parametro
+    ;    
+
+parametro:
+    tipo IDENTIFICADOR
+    | tipo IDENTIFICADOR SE_COMA parametro
+    ;
+
 tipo:
     PR_INT
-    | PR_FLOAT
-    | PR_CHAR
+    ;
+
+bloque:
+    LLAVE_AP lista_sentencias LLAVE_CE
+    ;
+
+lista_sentencias:
+    /* No hay sentencias */
+    | sentencia lista_sentencias
+    ;
+
+sentencia:
+    declaracion_variable
+    | 
     ;
 
 %%
+
 void yyerror(char *s) {
     printf("Error de sintaxis: %s\n", s);
 }

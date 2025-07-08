@@ -1,1 +1,5 @@
-int ola, var1, var2;
+int ola;
+
+int main(){
+    int poto;
+}
