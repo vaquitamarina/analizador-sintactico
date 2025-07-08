@@ -34,6 +34,7 @@ PR_SWITCH            "switch"
 PR_RETURN            "return"
 PR_SIZEOF            "sizeof"
 PR_WHILE             "while"
+PR_FOR               "for"
 PR_STATIC            "static"
 PR_DEFAULT           "default"
 PR_CONST             "const"
@@ -146,6 +147,7 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {PR_RETURN}             { return PR_RETURN; }
 {PR_SIZEOF}             { return PR_SIZEOF; }
 {PR_WHILE}              { return PR_WHILE; }
+{PR_FOR}                { return PR_FOR; }
 {PR_STATIC}             { return PR_STATIC; }
 {PR_DEFAULT}            { return PR_DEFAULT; }
 {PR_CONST}              { return PR_CONST; }
