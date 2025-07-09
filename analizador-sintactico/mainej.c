@@ -1,3 +1,4 @@
 int main(){
-    i*=10;
+    int i;
+    i = 10;
 }
