@@ -1,4 +1,4 @@
 int main(){
-    int i;
-    i = 10;
+    int i = 0;
+    int i = "asd";
 }

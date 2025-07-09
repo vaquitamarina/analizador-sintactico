@@ -63,6 +63,7 @@ declaracion:
 
 declaracion_variable:
     tipo lista_identificadores SE_PUNTO_COMA
+    | tipo asignacion SE_PUNTO_COMA
     ;
 
 lista_identificadores:
@@ -96,15 +97,10 @@ lista_parametros_op:
 
 parametro_op:
     identificador_op
-    | explit
+    | expresion;
     | identificador_op SE_COMA parametro_op
     ;
-explit:
-    LIT_CHAR
-    | LIT_STRING
-    | LIT_INT
-    | LIT_FLOAT
-    ;;
+
 
 tipo:
     PR_INT
