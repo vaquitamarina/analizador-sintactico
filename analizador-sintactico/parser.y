@@ -95,8 +95,15 @@ lista_parametros_op:
 
 parametro_op:
     identificador_op
+    | explit
     | identificador_op SE_COMA parametro_op
     ;
+explit:
+    LIT_CHAR
+    | LIT_STRING
+    | LIT_INT
+    | LIT_FLOAT
+    ;;
 
 tipo:
     PR_INT
