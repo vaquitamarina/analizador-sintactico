@@ -84,6 +84,7 @@ lista_identificadores:
 
 identificador_op:
     IDENTIFICADOR
+    | IDENTIFICADOR CORCHETE_AP expresion CORCHETE_CE
     | OP_MULTIPLICACION identificador_op
     ; 
 
