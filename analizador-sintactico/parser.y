@@ -69,6 +69,7 @@ lista_declaraciones:
 declaracion:
     declaracion_variable
     | declaracion_funcion
+    | declaracion_struct
     ;
 
 declaracion_variable:
@@ -122,6 +123,7 @@ tipo:
     | PR_DOUB
     | PR_BOOL_C99
     | PR_CHAR
+    | PR_STRUCT IDENTIFICADOR
     ;
 
 bloque:
@@ -158,6 +160,8 @@ asignacion:
     | IDENTIFICADOR OP_ASIGNACION_AND expresion
     | IDENTIFICADOR OP_ASIGNACION_OR expresion
     | IDENTIFICADOR OP_ASIGNACION_XOR expresion
+    | IDENTIFICADOR SE_PUNTO IDENTIFICADOR OP_ASIGNACION expresion
+    | IDENTIFICADOR OP_MIEMBRO_PTR IDENTIFICADOR OP_ASIGNACION expresion
     ;
 
 expresion:
@@ -172,6 +176,8 @@ expresion:
     | expresion OP_DIVISION expresion
     | expresion OP_MODULO expresion
     | PARENTESIS_AP expresion PARENTESIS_CE
+    | IDENTIFICADOR SE_PUNTO IDENTIFICADOR
+    | IDENTIFICADOR OP_MIEMBRO_PTR IDENTIFICADOR
     ;
 
 condicion:
@@ -212,6 +218,20 @@ sentencia_switch:
 
 sentencia_funcion:
     IDENTIFICADOR PARENTESIS_AP lista_parametros_op PARENTESIS_CE SE_PUNTO_COMA
+    ;
+
+declaracion_struct:
+    PR_STRUCT IDENTIFICADOR LLAVE_AP lista_miembros_struct LLAVE_CE SE_PUNTO_COMA
+    | PR_STRUCT IDENTIFICADOR SE_PUNTO_COMA
+    ;
+
+lista_miembros_struct:
+    miembro_struct
+    | miembro_struct lista_miembros_struct
+    ;
+
+miembro_struct:
+    tipo lista_identificadores SE_PUNTO_COMA
     ;
 %%
 

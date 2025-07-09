@@ -3,18 +3,12 @@
 struct Persona {
     int edad;
     char nombre;
+    float altura;
 };
 
 int main(){
     struct Persona p1;
     p1.edad = 25;
-    printf("Hola Mundo");
-    for(int i=1;i<3;i++)
-    {
-        if(i%2 == 0)
-        {
-            printf("par");
-        }
-    }
+    p1.altura = 1.75;
     return 0;
 }

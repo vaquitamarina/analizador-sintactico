@@ -1,6 +1,9 @@
 #include <stdio.h>
 
+struct Persona {
+    int edad;
+};
+
 int main(){
-    char mensaje = "asas";
     return 0;
 }
