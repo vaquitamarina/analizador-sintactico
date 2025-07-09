@@ -163,15 +163,11 @@ expresion:
     | LIT_FLOAT
     | LIT_CHAR
     | LIT_STRING
-    ;
-
-expresion_aritmetica:
-    expresion_aritmetica OP_SUMA expresion_aritmetica
-    | expresion_aritmetica OP_RESTA expresion_aritmetica
-    | expresion_aritmetica OP_MULTIPLICACION expresion_aritmetica
-    | expresion_aritmetica OP_DIVISION expresion_aritmetica
-    | PARENTESIS_AP expresion_aritmetica PARENTESIS_CE
-    | expresion
+    | expresion OP_SUMA expresion
+    | expresion OP_RESTA expresion
+    | expresion OP_MULTIPLICACION expresion
+    | expresion OP_DIVISION expresion
+    | PARENTESIS_AP expresion PARENTESIS_CE
     ;
 
 condicion:

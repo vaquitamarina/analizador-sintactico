@@ -1,23 +1,24 @@
-
-/* A Bison parser, made by GNU Bison 2.4.1.  */
+/* A Bison parser, made by GNU Bison 2.3.  */
 
 /* Skeleton interface for Bison's Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-   
-   This program is free software: you can redistribute it and/or modify
+
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
-   
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -28,10 +29,9 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
-
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -144,16 +144,120 @@
      DESCONOCIDO = 360
    };
 #endif
+/* Tokens.  */
+#define PR_INT 258
+#define PR_SHORT 259
+#define PR_LONG 260
+#define PR_FLOAT 261
+#define PR_DOUB 262
+#define PR_BOOL_C99 263
+#define PR_CHAR 264
+#define PR_SIGN 265
+#define PR_UNSIGN 266
+#define PR_VOID 267
+#define PR_ENUM 268
+#define PR_GOTO 269
+#define PR_INLINE 270
+#define PR_REGIS 271
+#define PR_RESTRICT 272
+#define PR_BREAK 273
+#define PR_SWITCH 274
+#define PR_RETURN 275
+#define PR_SIZEOF 276
+#define PR_WHILE 277
+#define PR_FOR 278
+#define PR_STATIC 279
+#define PR_DEFAULT 280
+#define PR_CONST 281
+#define PR_CASE 282
+#define PR_CONTIN 283
+#define PR_IF 284
+#define PR_ELSE 285
+#define PR_DO 286
+#define PR_AUTO 287
+#define PR_EXTERN 288
+#define PR_STRUCT 289
+#define PR_TYPEDEF 290
+#define PR_TYPEOF 291
+#define PR_UNION 292
+#define PR_TYPEUNQ 293
+#define PR_VOLATILE 294
+#define PR_ALIGNAS 295
+#define PR_ALIGNOF 296
+#define PR_ATOMIC 297
+#define PR_BOOL_CPP 298
+#define PR_COMPLEX 299
+#define PR_GENERIC 300
+#define PR_IMAGINARY 301
+#define PR_NORETURN 302
+#define PR_STATIC_ASSERT 303
+#define PR_THREAD_LOCAL 304
+#define COMILLA_SIMPLE 305
+#define OP_ASIGNACION 306
+#define OP_COMPARATIVO 307
+#define OP_MENOR 308
+#define OP_MAYOR 309
+#define OP_MENOR_IGUAL 310
+#define OP_MAYOR_IGUAL 311
+#define OP_NOES_IGUAL 312
+#define OP_SUMA 313
+#define OP_RESTA 314
+#define OP_MULTIPLICACION 315
+#define OP_DIVISION 316
+#define OP_TERNARIO_IF 317
+#define OP_TERNARIO_ELSE 318
+#define OP_ASIGNACION_SUMA 319
+#define OP_ASIGNACION_RESTA 320
+#define OP_ASIGNACION_MULTIP 321
+#define OP_ASIGNACION_DIV 322
+#define OP_AND 323
+#define OP_OR 324
+#define OP_NEGACION 325
+#define OP_ASIGNACION_XOR 326
+#define OP_ASIGNACION_AND 327
+#define OP_ASIGNACION_OR 328
+#define OP_ASIGNACION_INCREMENTAR 329
+#define OP_ASIGNACION_DISMINUIR 330
+#define OP_MODULO 331
+#define OP_ASIGNACION_MOD 332
+#define OP_XOR 333
+#define OP_DIRECCION 334
+#define OP_MIEMBRO_PTR 335
+#define OP_IZQ 336
+#define OP_DER 337
+#define SE_PUNTO 338
+#define SE_PUNTO_COMA 339
+#define SE_COMA 340
+#define LLAVE_AP 341
+#define LLAVE_CE 342
+#define CORCHETE_AP 343
+#define CORCHETE_CE 344
+#define PARENTESIS_AP 345
+#define PARENTESIS_CE 346
+#define SALTO_LINEA 347
+#define TAB 348
+#define ESPACIO 349
+#define SE_HASH 350
+#define PR_INCLUDE 351
+#define PR_DEFINE 352
+#define HEADER 353
+#define IDENTIFICADOR 354
+#define LIT_INT 355
+#define LIT_FLOAT 356
+#define LIT_CHAR 357
+#define LIT_STRING 358
+#define INVALID_STRING 359
+#define DESCONOCIDO 360
+
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef int YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
+# define YYSTYPE_IS_TRIVIAL 1
 #endif
 
 extern YYSTYPE yylval;
-
 
