@@ -159,6 +159,7 @@ expresion:
     | LIT_STRING
     ;
 
+
 condicion:
     expresion OP_COMPARATIVO expresion
     | expresion OP_MAYOR expresion
@@ -166,6 +167,9 @@ condicion:
     | expresion OP_MAYOR_IGUAL expresion
     | expresion OP_MENOR_IGUAL expresion
     | expresion OP_NOES_IGUAL expresion
+    | expresion OP_AND expresion
+    | expresion OP_OR expresion
+    | expresion OP_XOR expresion
     ;
 
 sentencia_if:
