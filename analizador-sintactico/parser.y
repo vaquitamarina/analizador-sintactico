@@ -48,7 +48,17 @@
 %%
 
 inicio:
-    lista_declaraciones
+    directivas_preprocesador_op lista_declaraciones
+    ;
+
+directivas_preprocesador_op:
+    /* vacío */
+    | directivas_preprocesador_op directiva_preprocesador
+    ;
+
+directiva_preprocesador:
+    PR_INCLUDE HEADER
+    | PR_DEFINE IDENTIFICADOR LIT_INT
     ;
 
 lista_declaraciones:
