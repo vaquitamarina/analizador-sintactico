@@ -75,7 +75,6 @@ declaracion:
 declaracion_variable:
     tipo lista_identificadores SE_PUNTO_COMA
     | tipo asignacion SE_PUNTO_COMA
-    | tipo OP_MULTIPLICACION asignacion SE_PUNTO_COMA
     ;
 
 lista_identificadores:
@@ -148,24 +147,24 @@ sentencia:
     ;
 
 asignacion:
-    IDENTIFICADOR OP_ASIGNACION expresion 
-    | IDENTIFICADOR OP_ASIGNACION_INCREMENTAR
-    | IDENTIFICADOR OP_ASIGNACION_DISMINUIR
-    | IDENTIFICADOR OP_MULTIPLICACION OP_ASIGNACION expresion
-    | IDENTIFICADOR OP_ASIGNACION_SUMA expresion
-    | IDENTIFICADOR OP_ASIGNACION_RESTA expresion
-    | IDENTIFICADOR OP_ASIGNACION_DIV expresion
-    | IDENTIFICADOR OP_ASIGNACION_MULTIP expresion
-    | IDENTIFICADOR OP_ASIGNACION_MOD expresion
-    | IDENTIFICADOR OP_ASIGNACION_AND expresion
-    | IDENTIFICADOR OP_ASIGNACION_OR expresion
-    | IDENTIFICADOR OP_ASIGNACION_XOR expresion
-    | IDENTIFICADOR SE_PUNTO IDENTIFICADOR OP_ASIGNACION expresion
-    | IDENTIFICADOR OP_MIEMBRO_PTR IDENTIFICADOR OP_ASIGNACION expresion
+    identificador_op OP_ASIGNACION expresion 
+    | identificador_op OP_ASIGNACION_INCREMENTAR
+    | identificador_op OP_ASIGNACION_DISMINUIR
+    | identificador_op OP_MULTIPLICACION OP_ASIGNACION expresion
+    | identificador_op OP_ASIGNACION_SUMA expresion
+    | identificador_op OP_ASIGNACION_RESTA expresion
+    | identificador_op OP_ASIGNACION_DIV expresion
+    | identificador_op OP_ASIGNACION_MULTIP expresion
+    | identificador_op OP_ASIGNACION_MOD expresion
+    | identificador_op OP_ASIGNACION_AND expresion
+    | identificador_op OP_ASIGNACION_OR expresion
+    | identificador_op OP_ASIGNACION_XOR expresion
+    | identificador_op SE_PUNTO IDENTIFICADOR OP_ASIGNACION expresion
+    | identificador_op OP_MIEMBRO_PTR IDENTIFICADOR OP_ASIGNACION expresion
     ;
 
 expresion:
-    IDENTIFICADOR
+    identificador_op
     | LIT_INT
     | LIT_FLOAT
     | LIT_CHAR
