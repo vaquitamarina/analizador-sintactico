@@ -75,6 +75,8 @@ declaracion:
 declaracion_variable:
     tipo lista_identificadores SE_PUNTO_COMA
     | tipo asignacion SE_PUNTO_COMA
+    | tipo IDENTIFICADOR CORCHETE_AP CORCHETE_CE OP_ASIGNACION lista_inicializacion SE_PUNTO_COMA
+    | tipo IDENTIFICADOR CORCHETE_AP expresion CORCHETE_CE OP_ASIGNACION lista_inicializacion SE_PUNTO_COMA
     ;
 
 lista_identificadores:
@@ -85,6 +87,7 @@ lista_identificadores:
 identificador_op:
     IDENTIFICADOR
     | IDENTIFICADOR CORCHETE_AP expresion CORCHETE_CE
+    | IDENTIFICADOR CORCHETE_AP CORCHETE_CE
     | OP_MULTIPLICACION identificador_op
     ; 
 
@@ -178,6 +181,7 @@ expresion:
     | IDENTIFICADOR SE_PUNTO IDENTIFICADOR
     | IDENTIFICADOR OP_MIEMBRO_PTR IDENTIFICADOR
     | condicion OP_TERNARIO_IF expresion OP_TERNARIO_ELSE expresion
+    | lista_inicializacion
     ;
 
 condicion:
@@ -232,6 +236,15 @@ lista_miembros_struct:
 
 miembro_struct:
     tipo lista_identificadores SE_PUNTO_COMA
+    ;
+
+lista_inicializacion:
+    LLAVE_AP elementos_inicializacion LLAVE_CE
+    ;
+
+elementos_inicializacion:
+    expresion
+    | expresion SE_COMA elementos_inicializacion
     ;
 %%
 
