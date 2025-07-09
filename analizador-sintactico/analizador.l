@@ -87,7 +87,10 @@ OP_NEGACION                "!"
 OP_ASIGNACION_INCREMENTAR  "++"
 OP_ASIGNACION_DISMINUIR    "--"
 OP_MODULO                  "%"
+OP_ASIGNACION_AND          "&="
+OP_ASIGNACION_OR           "|="
 OP_ASIGNACION_MOD          "%="
+OP_ASIGNACION_XOR          "^="
 OP_XOR                     "^"
 OP_DIRECCION               "&"
 OP_MIEMBRO_PTR             "->"
@@ -201,7 +204,10 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {OP_ASIGNACION_INCREMENTAR}  { return OP_ASIGNACION_INCREMENTAR; }
 {OP_ASIGNACION_DISMINUIR}    { return OP_ASIGNACION_DISMINUIR; }
 {OP_MODULO}                  { return OP_MODULO; }
+{OP_ASIGNACION_AND}          { return OP_ASIGNACION_AND; }
+{OP_ASIGNACION_OR}           { return OP_ASIGNACION_OR; }
 {OP_ASIGNACION_MOD}          { return OP_ASIGNACION_MOD; }
+{OP_ASIGNACION_XOR}          { return OP_ASIGNACION_XOR; }
 {OP_XOR}                     { return OP_XOR; }
 {OP_DIRECCION}               { return OP_DIRECCION; }
 {OP_MIEMBRO_PTR}             { return OP_MIEMBRO_PTR; }
