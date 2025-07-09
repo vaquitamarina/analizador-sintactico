@@ -5,13 +5,15 @@
     extern int yylex(void);
     extern char *yytext;
     extern FILE *yyin;
+    extern int yylineno;
     void yyerror(char *s);
 %}
+%define parse.error verbose
 
 %token PR_INT 
 %token PR_SHORT PR_LONG PR_FLOAT PR_DOUB PR_BOOL_C99 PR_CHAR PR_SIGN PR_UNSIGN
 %token PR_VOID PR_ENUM PR_GOTO PR_INLINE PR_REGIS PR_RESTRICT PR_BREAK PR_SWITCH
-%token PR_RETURN PR_SIZEOF PR_WHILE PR_STATIC PR_DEFAULT PR_CONST PR_CASE PR_CONTIN
+%token PR_RETURN PR_SIZEOF PR_WHILE PR_FOR PR_STATIC PR_DEFAULT PR_CONST PR_CASE PR_CONTIN
 %token PR_IF PR_ELSE PR_DO PR_AUTO PR_EXTERN PR_STRUCT PR_TYPEDEF PR_TYPEOF PR_UNION
 %token PR_TYPEUNQ PR_VOLATILE PR_ALIGNAS PR_ALIGNOF PR_ATOMIC PR_BOOL_CPP
 %token PR_COMPLEX PR_GENERIC PR_IMAGINARY PR_NORETURN PR_STATIC_ASSERT PR_THREAD_LOCAL
@@ -107,6 +109,8 @@ sentencia:
     | sentencia_if
     | sentencia_while
     | sentencia_return
+    | sentencia_for
+    | sentencia_switch
     ;
 
 asignacion:
@@ -133,19 +137,26 @@ condicion:
 sentencia_if:
     PR_IF PARENTESIS_AP condicion PARENTESIS_CE bloque
     | PR_IF PARENTESIS_AP condicion PARENTESIS_CE bloque PR_ELSE bloque
-;
+    ;
 
 sentencia_while:
     PR_WHILE PARENTESIS_AP condicion PARENTESIS_CE bloque
+    | PR_DO bloque PR_WHILE PARENTESIS_AP condicion PARENTESIS_CE SE_PUNTO_COMA
     ;
-
 sentencia_return:
     PR_RETURN expresion SE_PUNTO_COMA
     ;
+sentencia_for:
+    PR_FOR PARENTESIS_AP asignacion condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
+    | PR_FOR PARENTESIS_AP tipo asignacion condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
+    ;
+sentencia_switch:
+    PR_SWITCH PARENTESIS_AP expresion PARENTESIS_CE bloque
+    ;
 %%
 
-void yyerror(char *s) {
-    printf("Error de sintaxis: %s\n", s);
+void yyerror(char *msg) {
+    fprintf(stderr, "Error de sintaxis en la línea %d: %s\n", yylineno, msg);
 }
 
 int main(int argc, char **argv){
