@@ -223,7 +223,12 @@ int main(int argc, char **argv){
     else {
         yyin = stdin;
     }
-    yyparse();
+    int resultado = yyparse();
+    if (resultado == 0) {
+        printf("Análisis sintáctico correcto.\n");
+    } else {
+        printf("Se encontraron errores de sintaxis.\n");
+    }    
     return 0;
 }
 
