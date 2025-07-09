@@ -8,7 +8,6 @@
     extern int yylineno;
     void yyerror(char *s);
 %}
-%define parse.error verbose
 
 %token PR_INT 
 %token PR_SHORT PR_LONG PR_FLOAT PR_DOUB PR_BOOL_C99 PR_CHAR PR_SIGN PR_UNSIGN
@@ -66,9 +65,14 @@ declaracion_variable:
     ;
 
 lista_identificadores:
-    IDENTIFICADOR
-    | IDENTIFICADOR SE_COMA lista_identificadores
+    identificador_op
+    | identificador_op SE_COMA lista_identificadores
     ;
+
+identificador_op:
+    IDENTIFICADOR
+    | OP_MULTIPLICACION identificador_op
+    ; 
 
 declaracion_funcion:
     tipo IDENTIFICADOR PARENTESIS_AP lista_parametros PARENTESIS_CE bloque
@@ -83,6 +87,17 @@ parametro:
     tipo IDENTIFICADOR
     | tipo IDENTIFICADOR SE_COMA parametro
     ;
+
+lista_parametros_op:
+    /* No hay parametros */
+    | parametro_op
+    ;
+
+parametro_op:
+    IDENTIFICADOR
+    | IDENTIFICADOR SE_COMA parametro_op
+    ;
+
 
 tipo:
     PR_INT
@@ -105,16 +120,19 @@ lista_sentencias:
 
 sentencia:
     declaracion_variable
-    | asignacion 
+    | asignacion SE_PUNTO_COMA
     | sentencia_if
     | sentencia_while
     | sentencia_return
     | sentencia_for
     | sentencia_switch
+    | sentencia_funcion
     ;
 
 asignacion:
-    IDENTIFICADOR OP_ASIGNACION expresion SE_PUNTO_COMA
+    IDENTIFICADOR OP_ASIGNACION expresion 
+    | IDENTIFICADOR OP_ASIGNACION_INCREMENTAR
+    | IDENTIFICADOR OP_ASIGNACION_DISMINUIR
     ;
 
 expresion:
@@ -143,16 +161,22 @@ sentencia_while:
     PR_WHILE PARENTESIS_AP condicion PARENTESIS_CE bloque
     | PR_DO bloque PR_WHILE PARENTESIS_AP condicion PARENTESIS_CE SE_PUNTO_COMA
     ;
+
 sentencia_return:
     PR_RETURN expresion SE_PUNTO_COMA
     ;
+
 sentencia_for:
-    PR_FOR PARENTESIS_AP asignacion condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
-    | PR_FOR PARENTESIS_AP tipo asignacion condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
+    PR_FOR PARENTESIS_AP asignacion SE_PUNTO_COMA condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
+    | PR_FOR PARENTESIS_AP tipo asignacion SE_PUNTO_COMA condicion SE_PUNTO_COMA asignacion PARENTESIS_CE bloque
     ;
+
 sentencia_switch:
     PR_SWITCH PARENTESIS_AP expresion PARENTESIS_CE bloque
     ;
+
+sentencia_funcion:
+    IDENTIFICADOR PARENTESIS_AP lista_parametros_op PARENTESIS_CE SE_PUNTO_COMA
 %%
 
 void yyerror(char *msg) {
