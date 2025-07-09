@@ -122,7 +122,6 @@ tipo:
     | PR_DOUB
     | PR_BOOL_C99
     | PR_CHAR
-    | PR_STRUCT IDENTIFICADOR
     ;
 
 bloque:
