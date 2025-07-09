@@ -155,6 +155,14 @@ expresion:
     | LIT_STRING
     ;
 
+expresion_aritmetica:
+    expresion_aritmetica OP_SUMA expresion_aritmetica
+    | expresion_aritmetica OP_RESTA expresion_aritmetica
+    | expresion_aritmetica OP_MULTIPLICACION expresion_aritmetica
+    | expresion_aritmetica OP_DIVISION expresion_aritmetica
+    | PARENTESIS_AP expresion_aritmetica PARENTESIS_CE
+    | expresion
+    ;
 
 condicion:
     expresion OP_COMPARATIVO expresion
