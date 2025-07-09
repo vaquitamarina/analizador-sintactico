@@ -168,6 +168,7 @@ expresion:
     | expresion OP_RESTA expresion
     | expresion OP_MULTIPLICACION expresion
     | expresion OP_DIVISION expresion
+    | expresion OP_MODULO expresion
     | PARENTESIS_AP expresion PARENTESIS_CE
     ;
 
@@ -181,6 +182,7 @@ condicion:
     | expresion OP_AND expresion
     | expresion OP_OR expresion
     | expresion OP_XOR expresion
+    | OP_NEGACION expresion
     ;
 
 sentencia_if:
