@@ -75,7 +75,7 @@ identificador_op:
     ; 
 
 declaracion_funcion:
-    tipo IDENTIFICADOR PARENTESIS_AP lista_parametros PARENTESIS_CE bloque
+    tipo identificador_op PARENTESIS_AP lista_parametros PARENTESIS_CE bloque
     ;
 
 lista_parametros:
@@ -84,8 +84,8 @@ lista_parametros:
     ;    
 
 parametro:
-    tipo IDENTIFICADOR
-    | tipo IDENTIFICADOR SE_COMA parametro
+    tipo identificador_op
+    | tipo identificador_op SE_COMA parametro
     ;
 
 lista_parametros_op:
@@ -94,10 +94,9 @@ lista_parametros_op:
     ;
 
 parametro_op:
-    IDENTIFICADOR
-    | IDENTIFICADOR SE_COMA parametro_op
+    identificador_op
+    | identificador_op SE_COMA parametro_op
     ;
-
 
 tipo:
     PR_INT
