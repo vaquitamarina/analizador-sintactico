@@ -74,6 +74,7 @@ declaracion:
 declaracion_variable:
     tipo lista_identificadores SE_PUNTO_COMA
     | tipo asignacion SE_PUNTO_COMA
+    | tipo OP_MULTIPLICACION asignacion SE_PUNTO_COMA
     ;
 
 lista_identificadores:
@@ -107,7 +108,7 @@ lista_parametros_op:
 
 parametro_op:
     identificador_op
-    | expresion;
+    | expresion
     | identificador_op SE_COMA parametro_op
     ;
 
@@ -210,6 +211,7 @@ sentencia_switch:
 
 sentencia_funcion:
     IDENTIFICADOR PARENTESIS_AP lista_parametros_op PARENTESIS_CE SE_PUNTO_COMA
+    ;
 %%
 
 void yyerror(char *msg) {

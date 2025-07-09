@@ -256,23 +256,21 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 }
 
 {COMILLA_DOBLE} {
-  strcat(stringBuffer, "\"");
+  strcpy(stringBuffer, "");
   BEGIN(STRING); 
 }
 <STRING>{
   \\\"    {strncat(stringBuffer, yytext,2);}
 
   {COMILLA_DOBLE} {
-    strcat(stringBuffer, "\"");
+    BEGIN(INITIAL);
     return LIT_STRING;
-    strcpy(stringBuffer, "");
-    BEGIN(INITIAL); 
   }
   .|\n     {strncat(stringBuffer, yytext, 1);}
   <<EOF>> {
-    return INVALID_STRING;
     strcpy(stringBuffer, "");
-    BEGIN(INITIAL); 
+    BEGIN(INITIAL);
+    return INVALID_STRING;
   }
 }
 
