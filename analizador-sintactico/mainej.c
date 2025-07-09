@@ -7,14 +7,13 @@ struct Persona {
 
 int main(){
     struct Persona p1;
+    int resultado;
     p1.edad = 25;
+    resultado = p1.edad > 18 ? 1 : 0;
     printf("Hola Mundo");
-    for(int i=1;i<3;i++)
+    for (int i=0;i<9;i++)
     {
-        if(i%2 == 0)
-        {
-            printf("par");
-        }
+        fprintf(stdout, "hola");
     }
     return 0;
 }

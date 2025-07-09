@@ -178,6 +178,7 @@ expresion:
     | PARENTESIS_AP expresion PARENTESIS_CE
     | IDENTIFICADOR SE_PUNTO IDENTIFICADOR
     | IDENTIFICADOR OP_MIEMBRO_PTR IDENTIFICADOR
+    | condicion OP_TERNARIO_IF expresion OP_TERNARIO_ELSE expresion
     ;
 
 condicion:

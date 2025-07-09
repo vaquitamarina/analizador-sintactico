@@ -196,6 +196,8 @@ IDENTIFICADOR ({LETRA}|{SE_GUION_BAJO})({LETRA}|{DIGITO}|{SE_GUION_BAJO})*
 {OP_ASIGNACION_RESTA}        { return OP_ASIGNACION_RESTA; }
 {OP_ASIGNACION_MULTIP}       { return OP_ASIGNACION_MULTIP; }
 {OP_ASIGNACION_DIV}          { return OP_ASIGNACION_DIV; }
+{OP_TERNARIO_IF}             { return OP_TERNARIO_IF; }
+{OP_TERNARIO_ELSE}           { return OP_TERNARIO_ELSE; }
 {OP_AND}                     { return OP_AND; }
 {OP_OR}                      { return OP_OR; }
 {OP_NEGACION}                { return OP_NEGACION; }
